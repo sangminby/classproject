@@ -20,17 +20,7 @@ public class RelationlOperator {
 		if(num1 > num2) {
 			// 참일 때 처리되는 블록
 			System.out.println("num1이 num2보다 큽니다.");
-			
-			
-		}
-		
-		
-		
-		
-		
-		
-		
-
+	
 	}
-
-}
+	}
+	}
