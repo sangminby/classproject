@@ -79,7 +79,7 @@ public class Member {
 	public static void checkVaccin(int birthYear) {
 		
 		// 올해 년도
-				int currYear = Calendar.getInstance().get(Calendar.YEAR);
+		int currYear = Calendar.getInstance().get(Calendar.YEAR);
 		
 		// 나이 계산
 		int age = currYear - birthYear + 1;
