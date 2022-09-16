@@ -1,6 +1,7 @@
+
 package Chapter04.exam;
 
-public class Exam5 {
+public class Exam05 {
 
 	public static void main(String[] args) {
 		

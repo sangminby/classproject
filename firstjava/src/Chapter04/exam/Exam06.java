@@ -1,6 +1,6 @@
 package Chapter04.exam;
 
-public class Exam6 {
+public class Exam06 {
 
 	public static void main(String[] args) {
 		
@@ -43,7 +43,5 @@ public class Exam6 {
 		} while(num<100);
 		
 		System.out.println("do while문을 이용한 1~99 까지의 합: " + sum);
-
-
 	}
 }
