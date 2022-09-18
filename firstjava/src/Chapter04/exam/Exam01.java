@@ -15,7 +15,7 @@ public class Exam01 {
 			//System.out.println(num);
 			//result = result * 1;
 			result *= num;
-			System.out.println(num + " : " + result + "\n");
+			System.out.println(num + " : " + result + "\n");   // \n : 줄 띄어쓰기
 		}
 	
 

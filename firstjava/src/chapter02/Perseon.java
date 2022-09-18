@@ -11,5 +11,4 @@ public class Perseon {
 		String personNumber = null;
 
 	}
-
 }
