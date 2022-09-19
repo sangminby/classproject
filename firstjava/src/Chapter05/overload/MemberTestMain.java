@@ -15,8 +15,10 @@ public class MemberTestMain {
 		System.out.println();
 		
 		Scanner in = new Scanner(System.in);
+		
 		System.out.println("생일을 입력해주세요.");
 		String birth = in.nextLine();
+		
 		System.out.println();
 		
 		System.out.println("주소를 입력해주세요.");
