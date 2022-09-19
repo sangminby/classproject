@@ -11,8 +11,6 @@ public class MemberTest {
 	String birth;
 	String add;
 	
-	// ② 위에서 정의한 정보를 출력하는 메소드 정의
-	
 	// ③ 모든 정보를 저장하도록 하는 생성자
 	MemberTest(String name, String number, String major, int level, String email, String birth, String add) {
 		this.name = name;
@@ -29,6 +27,7 @@ public class MemberTest {
 		this(name, number, major, level, email, " ", " ");
 	}
 	
+	// ② 위에서 정의한 정보를 출력하는 메소드 정의
 	void showInfo() {
 		System.out.println("개인정보"+ "\n");
 		System.out.println("이름: " + name);
