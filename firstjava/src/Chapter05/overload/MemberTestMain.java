@@ -8,7 +8,7 @@ public class MemberTestMain {
 	public static void main(String[] args) {
 		
 			
-		MemberTest mt1 = new MemberTest("손흥민", "01074200195", "축구", 3, "sangminby@naver.com", "10월9일", "서울 강동구");
+		MemberTest mt1 = new MemberTest("손흥민", "01074200195", "축구", 3, "sangminby@naver.com", "10월 9일", "서울 강동구");
 		
 		mt1.showInfo();
 		
