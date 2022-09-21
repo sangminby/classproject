@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Contact01 {
 	
 	// 연락처 데이터를 저장하는 인스턴스를 생성합니다.
+	// 변수들은 직접 참조를 막아 캡슐화 처리를 하도록 해봅시다.
 	private String name; // 이름
 	private String number; // 번호
 	private String email; // 메일
@@ -13,6 +14,7 @@ public class Contact01 {
 	private String groups; // 그룹
 	
 	// 변수 값을 반환하는 각각의 메소드를 호출해서 각 데이터를 출력문으로 출력합니다.
+	// 변수의 직접 참조는 안되지만 변수의 값을 얻을 수 있는 메소드(getter)
 	public String getName() { return name; }
 	public String getNumber() { return number; }
 	public String getEmail() { return email; }
@@ -21,6 +23,7 @@ public class Contact01 {
 	public String getGroups() { return groups; }
 	
 	// 인스턴스의 각 변수에 값을 바꾸는 메소드를 이용해서 데이터를 수정합니다.
+	// 변수에 값을 저장할 수 있는 메소드(setter)를 정의합니다.
 	public void setName(String name) { this.name = name; }
 	public void setNumber(String number) { this.number = number; }
 	public void setEmail(String email) { this.email = email; }
@@ -46,7 +49,8 @@ public class Contact01 {
 		// 인스턴스 생성과 함께 데이터를 초기화 할 수 있도록 생성자를 정의해봅시다
 		Contact01 c1 = new Contact01();
 		
-		//인스턴스의 출력메소드를 다시 실행합니다.
+		// 인스턴스의 출력메소드를 다시 실행합니다.
+		// 저장할 데이터를 콘솔에서 사용자의 입력 값으로 인스턴스를 생성해봅시다.
 		while (true) {
 	
 			Scanner in = new Scanner(System.in);
@@ -83,9 +87,3 @@ public class Contact01 {
 		}
 	}
 }
-
-
-
-
-
-	
