@@ -246,7 +246,7 @@ public class SmartPhone {
 		group = sc.nextLine();
 	
 		// 2. 인스턴스 생성
-		Contact contact = new Contact(
+		Contact a = new Contact(
 				name,
 				phonenumber,
 				email,
@@ -256,8 +256,8 @@ public class SmartPhone {
 		
 		// 배열에 저장
 		// 처음 입력 : numofContact -> 0
-		contacts[numofContact++] = contact;
-		// numofContact++;
+		contacts[numofContact] = a;
+		 numofContact++;
 		
 	}
 }
