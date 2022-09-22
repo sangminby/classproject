@@ -51,9 +51,9 @@ public class Contact01 {
 		
 		// 인스턴스의 출력메소드를 다시 실행합니다.
 		// 저장할 데이터를 콘솔에서 사용자의 입력 값으로 인스턴스를 생성해봅시다.
-		while (true) {
+	while (true) {
 	
-			Scanner in = new Scanner(System.in);
+		Scanner in = new Scanner(System.in);
 	
 			System.out.println("저장정보" + "\n");
 	
@@ -72,15 +72,17 @@ public class Contact01 {
 			
 			System.out.println();
 			
-			c1.showInfo();
+		c1.showInfo();
 			
 			System.out.println();
 			
 			System.out.println("저장을 계속하시려면 1, 그만하시려면 2 입력");
-			int exit = in.nextInt();
+		int exit = in.nextInt();
 			System.out.println();
 					
-			if(exit==2) {
+		if(exit==2) {
+			System.out.println("종료");
+				
 				 break;
 			}
 			

@@ -1,4 +1,4 @@
-package Ver01;
+package Ver02;
 
 // Contact 클래스의 용도 ? -> 데이터 저장
 // 인스턴스 생성 -> 변수의 메모리 생성 -> 데이터 저장
@@ -20,6 +20,7 @@ class Contact {
 	private String birthday;	// 생일
 	private String group;		// 그룹
 	
+	public Contact() {}
 	
 	public Contact(String name, String number, String email, String address, String birthday, String group) {
 		this.name = name;
@@ -71,6 +72,8 @@ class Contact {
 	
 	// 위 데이터를 출력하는 기능
 	public void printData() {
+		System.out.println();
+		System.out.println("저장정보------------");
 		System.out.println("이름: " + this.name);
 		System.out.println("번호: " + this.number);
 		System.out.println("메일: " + this.email);
@@ -85,4 +88,12 @@ class Contact {
 				+ ", birthday=" + birthday + ", group=" + group + "]";
 	}
 	
+	public static void main(String[] args) {
+		
+		Contact contact = new Contact();
+		
+	
+		
+	}
 }
+
