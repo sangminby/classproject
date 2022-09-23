@@ -6,7 +6,7 @@ public class SmartPhone {
 	
 	private SmartPhone(int a) {
 		cat = new Contact[a];
+		
+		
 	}
-	
-	
 }
