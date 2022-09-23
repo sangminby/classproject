@@ -5,7 +5,7 @@ public class Phone {
 	// 전화번호
 	String phoneNumber;
 	
-	// 2
+	
 	Phone() {
 		this.phoneNumber = "010-1234-1234";
 	}

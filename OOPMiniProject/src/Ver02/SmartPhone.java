@@ -59,7 +59,7 @@ public class SmartPhone {
 						searchIndex = i;
 						break;
 					}
-				}
+				} 
 				
 				if(searchIndex<0) {
 					System.out.println("찾으시는 데이터가 존재하지않습니다.");

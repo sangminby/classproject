@@ -33,4 +33,5 @@ public class SmartPhoneMain02 {
 //		static void callByPhone(GoglePhone phone) {
 //			phone.call();
 //	}
+	
 }
