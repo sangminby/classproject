@@ -22,6 +22,10 @@ public class SmartPhone {
 		return pho;
 	}
 	
+	// 배열에 인스턴스를 저장하고,
+	// 1. 데이터 받고
+	// 2. 인스턴스 생성
+	// 3. 배열에 인스턴스 참조값을 저장
 	void insert() {
 		
 		if(num>con.length) {
@@ -54,6 +58,7 @@ public class SmartPhone {
 		con[num++] = c;
 	}
 	
+	// 전체 입력 데이터의 출력
 	void all() {
 		
 		if(num==0) {
@@ -65,6 +70,7 @@ public class SmartPhone {
 		}
 	}
 	
+	// 검색 후 결과 출력 ( 이름으로 검색 )
 	void serch() {
 		
 		String name = null;
@@ -91,6 +97,7 @@ public class SmartPhone {
 		}
 	}
 	
+	// 삭제 ( 이름으로 검색 )
 	void del() {
 		System.out.println("데이터 삭제가 진행됩니다.");
 		System.out.println("삭제할 이름을 적어주세요 >>");
@@ -117,6 +124,7 @@ public class SmartPhone {
 		
 	}
 	
+	// 이름 검색 후 데이터 수정
 	void edit() {
 		
 		System.out.println("데이터 수정이 진행됩니다.");
@@ -139,15 +147,39 @@ public class SmartPhone {
 			return;
 		}
 	
+		Contact cont = con[index];
+		
+		System.out.println("데이터 수정을 진행합니다.");
 		
 		
+		System.out.println(
+				"변경하고자 하는 이름을 입력해주세요.(현재값: " + cont.getName() + ")\n" 
+						+ "변경하지 않으려면 엔터를 치세요 >");
+		String nName = s.nextLine();
+		
+		if(nName != null && nName.trim().length()>0) {
+			cont.setName(nName);
+		}
 		
 		
+		System.out.println(
+				"변경하고자 하는 전화번호를 입력해주세요.(현재값: " + cont.getNumber() + ")\n" 
+						+ "변경하지 않으려면 엔터를 치세요 >");
+		String nNumber = s.nextLine();
+		if(nNumber != null && nNumber.trim().length()>0) {
+			cont.setNumber(nNumber);
+		}
 		
+		System.out.println(
+				"변경하고자 하는 이메일을 입력해주세요.(현재값: " + cont.getEmail() + ")\n" 
+						+ "변경하지 않으려면 엔터를 치세요 >");
+		String newEmail = s.nextLine();
+		if(newEmail != null && newEmail.trim().length()>0) {
+			cont.setEmail(newEmail);
+		}
+	
+	
+	
+	
 	}
-	
-	
-	
-	
-	
 }
