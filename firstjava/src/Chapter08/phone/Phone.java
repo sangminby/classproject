@@ -1,7 +1,7 @@
 package Chapter08.phone;
 
 public interface Phone {
-
+	
 	// 폰이 가지는 다이얼 숫자 상수로 표현
 	int PHONE_NUM_1 = 1;	// public static final 생략
 	int PHONE_NUM_2 = 2;
@@ -14,14 +14,15 @@ public interface Phone {
 	int PHONE_NUM_9 = 9;
 	int PHONE_NUM_0 = 0;
 	
-	// 메소드는 추상 메소드로 정의
-	// 전화걸기
+	// 메소드는 추상 메소드로정의
+	// 전화 걸기
 	void call();	// public abstract 생략
 	
-	// 전원켜기
-	void trunOn();
+	// 전원 키기
+	void turnOn();
 	
-	// 전원끄기
-	void trunOff();
-
+	// 전워 끄기
+	void turnOff();
+	
+	
 }

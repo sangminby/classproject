@@ -1,10 +1,10 @@
 package Chapter08.phone;
 
-public class SmartPhone extends Computer implements Phone {
+public class SmartPhone3 extends Computer implements SmartDevice {
 
 	boolean power;
 
-	public SmartPhone(String account) {
+	public SmartPhone3(String account) {
 		super(account);
 		this.power = false;
 	}
@@ -41,12 +41,17 @@ public class SmartPhone extends Computer implements Phone {
 		
 	}
 	
-	public static void main(String[] args) {
+
+
+	@Override
+	public void appRun(String appName) {
+		System.out.println(appName + " 앱을 실행합니다.");
 		
-		SmartPhone phone = new SmartPhone("cool@gmail.com");
-		
-		phone.call();
-		phone.calculator();
+	}
+
+	@Override
+	public void appStop(String appName) {
+		System.out.println(appName + " 앱을 종료합니다.");
 		
 	}
 	
