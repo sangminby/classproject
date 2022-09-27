@@ -1,4 +1,4 @@
-package chapter02;
+package Chapter02;
 
 public class Perseon {
 
