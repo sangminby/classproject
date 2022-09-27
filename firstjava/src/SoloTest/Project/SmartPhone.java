@@ -170,6 +170,7 @@ public class SmartPhone {
 			cont.setNumber(nNumber);
 		}
 		
+		
 		System.out.println(
 				"변경하고자 하는 이메일을 입력해주세요.(현재값: " + cont.getEmail() + ")\n" 
 						+ "변경하지 않으려면 엔터를 치세요 >");
@@ -178,7 +179,36 @@ public class SmartPhone {
 			cont.setEmail(newEmail);
 		}
 	
+		
+		System.out.println(
+				"변경하고자 하는 주소를 입력해주세요.(현재값: " + cont.getAddress() + ")\n" 
+						+ "변경하지 않으려면 엔터를 치세요 >");
+		String newAddress = s.nextLine();
+		if(newAddress != null && newAddress.trim().length()>0) {
+			cont.setAddress(newAddress);
+		}
 	
+		
+		System.out.println(
+				"변경하고자 하는 생일을 입력해주세요.(현재값: " + cont.getBirthday() + ")\n" 
+						+ "변경하지 않으려면 엔터를 치세요 >");
+		String newBirthday = s.nextLine();
+		if(newBirthday != null && newBirthday.trim().length()>0) {
+			cont.setBirthday(newBirthday);
+		}
+		
+		
+		System.out.println(
+				"변경하고자 하는 그룹을 입력해주세요.(현재값: " + cont.getGroup() + ")\n" 
+						+ "변경하지 않으려면 엔터를 치세요 >");
+		String newGroup = s.nextLine();
+		if(newGroup != null && newGroup.trim().length()>0) {
+			cont.setGroup(newGroup);
+		}
+		
+		
+		System.out.println("정보가 수정되었습니다.");
+		System.out.println();
 	
 	
 	}
