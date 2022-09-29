@@ -1,0 +1,25 @@
+package Chapter11;
+
+public class MyClass<T> {
+
+	T val;
+	
+	T getVal() {
+		return val;
+	}
+	
+	void setVal(T val) {
+		this.val = val;
+	}
+	
+	public static void main(String[] args) {
+		
+		// 제네릭 클래스는 인스턴스 생성시에 타입을 결정한다
+		MyClass<String> myclass = new MyClass<String>();
+		String str = myclass.getVal();
+		
+		myclass.setVal("KING");
+		System.out.println(myclass.getVal());
+		
+	}
+}
