@@ -1,8 +1,8 @@
-package Ver03;
+package Ver04;
 
 // Contact 클래스의 용도 ? -> 데이터 저장
 // 인스턴스 생성 -> 변수의 메모리 생성 -> 데이터 저장
-class Contact {
+abstract class Contact implements ShowData {
 	
 	/*	저장 정보
  		이름
@@ -87,6 +87,6 @@ class Contact {
 		return "Contact [name=" + name + ", number=" + number + ", email=" + email + ", address=" + address
 				+ ", birthday=" + birthday + ", group=" + group + "]";
 	}
-
+	
 }
 

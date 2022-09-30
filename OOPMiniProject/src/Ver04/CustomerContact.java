@@ -1,4 +1,4 @@
-package Ver03;
+package Ver04;
 
 public class CustomerContact extends Contact {
 
@@ -51,6 +51,12 @@ public class CustomerContact extends Contact {
 	public void setManager(String manager) {
 		this.manager = manager;
 	}
-	
+
+
+	@Override
+	public void ShowData() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

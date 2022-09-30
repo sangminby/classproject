@@ -1,4 +1,4 @@
-package Ver03;
+package Ver05;
 
 public class CompanyContact extends Contact {
 
@@ -67,6 +67,13 @@ public class CompanyContact extends Contact {
 				"토트넘", "선수", "없음");
 		
 		contact.printData();
+		
+	}
+
+
+	@Override
+	public void ShowData() {
+		// TODO Auto-generated method stub
 		
 	}
 	
