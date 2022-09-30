@@ -19,7 +19,7 @@ public class Box {
 		Box box = new Box();
 		box.push(new Orange());
 		box.push(new Apple());
-		box.push(new String("Apple"));
+//		box.push(new String("Apple"));
 		
 	}
 }

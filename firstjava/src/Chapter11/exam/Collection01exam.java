@@ -34,24 +34,24 @@ public class Collection01exam {
 		list1.add(fp.age);
 		in.nextInt();
 
-		printAll(list, list1);
+		
 
 	
 	}
 }
-
-	class FootballPlayer {
-		
-		String name;
-		int number;
-		String team;
-		int age;
-		
-		void print(String name, int number, String team, int age) {
-			this.name = name;
-			this.number = number;
-			this.team = team;
-			this.age = age;
+//
+//	class FootballPlayer {
+//		
+//		String name;
+//		int number;
+//		String team;
+//		int age;
+//		
+//		void print(String name, int number, String team, int age) {
+//			this.name = name;
+//			this.number = number;
+//			this.team = team;
+//			this.age = age;
 		}
 	}
 
