@@ -1,4 +1,4 @@
-package SoloTest.Project;
+package Ver01;
 
 public class Contact {
 
