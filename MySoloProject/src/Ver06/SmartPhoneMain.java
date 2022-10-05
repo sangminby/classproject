@@ -11,6 +11,7 @@ public class SmartPhoneMain {
 			printMenu();
 			int select = Integer.parseInt(sp.sc.nextLine());
 			
+//		1. 메뉴 입력 시 발생할 수 있는 예외에 대하여 예외 처리합시다. 
 		try {
 			if(!(select<0 && select>7)) {
 				throw new Exception();

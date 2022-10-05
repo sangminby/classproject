@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 //	1. SmartPhone 클래스를 정의합니다. 이 클래스는 연락처 정보를 관리하는 클래스입니다. 
-public class SmartPhone extends Exception{
+public class SmartPhone {
 
 //	① SmartPhone 클래스의 인스턴스를 생성합니다.
 	private Contact[] contacts;
@@ -26,6 +26,21 @@ public class SmartPhone extends Exception{
 			sp = new SmartPhone(10);
 		}
 		return sp;
+	}
+	
+//	이름을 입력받고 배열에 해당 이름의 Contact 객체가 있는 index 반환
+	private int getIndex() {
+		
+		String name = sc.nextLine();
+		
+		int searchIndex = -1;
+		
+		for(int i=0; i<numofContact-1; i++) {
+			if(contacts[i].getName().equals(name)) {
+				searchIndex = i;
+				break;
+			}
+		} return searchIndex;
 	}
 	
 //	② 배열에 인스턴스를 저장하고
@@ -50,6 +65,7 @@ public class SmartPhone extends Exception{
 		
 		System.out.println("입력을 시작합니다.");
 		
+//		2. 연락처 이름 이력 시에 공백에 대한 예외처리와 영문자와 한글만 허용하는 예외 처리를 해봅시다. 
 		boolean chk = false;
 		
 		while(!chk) {
@@ -67,6 +83,7 @@ public class SmartPhone extends Exception{
 			}
 		}
 		
+//		3. 전화번호 형식에 맞지 않을 때 예외처리를 하고 중복될 때 예외 상황이 발생하도록 하고 예외 처리를 합시다.
 		boolean chk1 = false;
 		
 		while(!chk1) {
@@ -293,21 +310,6 @@ public class SmartPhone extends Exception{
 		}
 		System.out.println("정보가 수정되었습니다.");
 		System.out.println();	
-	}
-	
-//	이름을 입력받고 배열에 해당 이름의 Contact 객체가 있는 index 반환
-	private int getIndex() {
-		
-		String name = sc.nextLine();
-		
-		int searchIndex = -1;
-		
-		for(int i=0; i<numofContact-1; i++) {
-			if(contacts[i].getName().equals(name)) {
-				searchIndex = i;
-				break;
-			}
-		} return searchIndex;
 	}
 	
 //	입력 문자가 공백일 경우 다시 입력하도록 하는 기능
