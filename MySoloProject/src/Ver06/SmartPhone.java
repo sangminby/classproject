@@ -1,9 +1,10 @@
-package Ver05;
+package Ver06;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 //	1. SmartPhone 클래스를 정의합니다. 이 클래스는 연락처 정보를 관리하는 클래스입니다. 
-public class SmartPhone {
+public class SmartPhone extends Exception{
 
 //	① SmartPhone 클래스의 인스턴스를 생성합니다.
 	private Contact[] contacts;
@@ -49,12 +50,39 @@ public class SmartPhone {
 		
 		System.out.println("입력을 시작합니다.");
 		
-		System.out.print("이름 > ");
-		name = getName();
+		boolean chk = false;
 		
-		System.out.print("번호 > ");
-		number = getPhoneNumber();
+		while(!chk) {
+			System.out.print("이름 > ");
+			name = getName();
+			chk = Pattern.matches("^[a-zA-Z가-힣ㄱ-ㅎ]*$", name);
+			
+			try {
+				if(!chk) {
+					throw new Exception();
+				}
+				
+			} catch (Exception e) {
+				System.out.println("영문자와 한글만 입력가능합니다. \n 다시 입력해주세요 > ");
+			}
+		}
 		
+		boolean chk1 = false;
+		
+		while(!chk1) {
+			System.out.print("번호 > ");
+			number = getPhoneNumber();
+			chk1 = Pattern.matches("^(\\d{3})-(\\d{4})-(\\d{4})$", number);
+			
+			try {
+				if(!chk1) {
+					throw new Exception();
+				}
+			} catch (Exception e) {
+				System.out.println("010-0000-0000 형식에 맞게 입력해주세요 > ");
+			}
+		}
+	
 		System.out.print("이메일 > ");
 		email = getString();
 		
@@ -306,7 +334,7 @@ public class SmartPhone {
 		while(true) {
 			name = sc.nextLine();
 			
-			if(name!=null && name.trim().length()>=0) {
+			if(name!=null && name.trim().length()!=0) {
 				boolean chk = false;
 				
 				for(int i=0; i<numofContact; i++) {
@@ -336,7 +364,7 @@ public class SmartPhone {
 		while(true) {
 			phonenumber = sc.nextLine();
 			
-			if(phonenumber!=null && phonenumber.trim().length()>=0) {
+			if(phonenumber!=null && phonenumber.trim().length()>0) {
 				boolean chk = false;
 				
 				for(int i=0; i<numofContact; i++) {
