@@ -47,7 +47,27 @@ public class Mamo {
 	
 	
 	
-	
+	try {
+		if(name!=null && name.trim().length()!=0) {
+			boolean chk = false;
+			for(int i=0; i<numofContact; i++) {
+				if(name.equals(contacts[i].getName())) {
+				}
+			}
+		}	
+	} catch() {	
+		if(chk) {
+			System.out.println("중복된 연락처가 저장되어 있습니다. \n 다시 입력해주세요 > ");
+		} else {
+			break;
+		}
+	} catch() {
+	else {
+		System.out.println("공백은 허용하지 않습니다.");
+	}
+	}
+}
+return name;
 	
 	
 	

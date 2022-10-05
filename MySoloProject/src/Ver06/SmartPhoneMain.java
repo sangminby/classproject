@@ -11,14 +11,6 @@ public class SmartPhoneMain {
 			printMenu();
 			int select = Integer.parseInt(sp.sc.nextLine());
 			
-//		1. 메뉴 입력 시 발생할 수 있는 예외에 대하여 예외 처리합시다. 
-		try {
-			if(!(select<0 && select>7)) {
-				throw new Exception();
-			}
-		} catch(Exception e) {
-			System.out.println("\n1~6까지 메뉴중 선택해주세요.\n");
-		}
 			switch(select) {
 //			④ 배열의 모든 요소를 저장합니다.
 				case 1 :
