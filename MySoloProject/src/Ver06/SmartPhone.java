@@ -1,3 +1,4 @@
+
 package Ver06;
 
 import java.util.Scanner;
@@ -65,40 +66,12 @@ public class SmartPhone {
 		
 		System.out.println("입력을 시작합니다.");
 		
-//		2. 연락처 이름 이력 시에 공백에 대한 예외처리와 영문자와 한글만 허용하는 예외 처리를 해봅시다. 
-		boolean chk = false;
-		
-		while(!chk) {
-			System.out.print("이름 > ");
-			name = getName();
-			chk = Pattern.matches("^[a-zA-Z가-힣ㄱ-ㅎ]*$", name);
-			
-			try {
-				if(!chk) {
-					throw new Exception();
-				}
-				
-			} catch (Exception e) {
-				System.out.println("영문자와 한글만 입력가능합니다. \n 다시 입력해주세요 > ");
-			}
-		}
-		
-//		3. 전화번호 형식에 맞지 않을 때 예외처리를 하고 중복될 때 예외 상황이 발생하도록 하고 예외 처리를 합시다.
-		boolean chk1 = false;
-		
-		while(!chk1) {
-			System.out.print("번호 > ");
-			number = getPhoneNumber();
-			chk1 = Pattern.matches("^(\\d{3})-(\\d{4})-(\\d{4})$", number);
-			
-			try {
-				if(!chk1) {
-					throw new Exception();
-				}
-			} catch (Exception e) {
-				System.out.println("010-0000-0000 형식에 맞게 입력해주세요 > ");
-			}
-		}
+
+		System.out.print("이름 > ");
+		name = getName();
+
+		System.out.print("번호 > ");
+		number = getPhoneNumber();
 	
 		System.out.print("이메일 > ");
 		email = getString();
@@ -332,30 +305,66 @@ public class SmartPhone {
 	private String getName() {
 		
 		String name = null;
+		boolean chk = false;
 		
 		while(true) {
 			name = sc.nextLine();
+			chk = Pattern.matches("^[a-zA-Z가-힣]*$", name);
 			
-			if(name!=null && name.trim().length()!=0) {
-				boolean chk = false;
-				
+			try {
+				if(!chk) {
+					throw new ArrayIndexOutOfBoundsException();
+				}
+				if(name!=null && name.trim().length()!=0) {
+					throw new ArithmeticException();
+				}
 				for(int i=0; i<numofContact; i++) {
 					if(name.equals(contacts[i].getName())) {
-						chk = true;
-						break;
+						throw new Exception();
 					}
 				}
-				
-				if(chk) {
-					System.out.println("중복된 연락처가 저장되어 있습니다. \n 다시 입력해주세요 > ");
-				} else {
-					break;
-				}
-			} else {
-				System.out.println("공백은 허용하지 않습니다.");
+			} catch (ArrayIndexOutOfBoundsException e) {
+				System.out.println("영문자와 한글만 입력가능합니다. \n다시 입력해주세요 > ");
+			} catch (ArithmeticException e) {
+				System.out.println("공백은 사용할 수 없습니다.");
+			} catch (Exception e) {
+				System.out.println("중복된 연락처가 저장되어 있습니다. \n 다시 입력해주세요 > ");
 			}
-		}
-		return name;
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		}	
+			
+//			if(name!=null && name.trim().length()!=0) {
+//				for(int i=0; i<numofContact; i++) {
+//					if(name.equals(contacts[i].getName())) {
+//					}
+//				}
+//				
+//				if(chk) {
+//					System.out.println("중복된 연락처가 저장되어 있습니다. \n 다시 입력해주세요 > ");
+//				} else {
+//					break;
+//				}
+//			} else {
+//				System.out.println("공백은 허용하지 않습니다.");
+//			}
+//		}
+//		return name;
 	}
 	
 //	전화번호를 받아서 중복된 전화번호가 있는지 체크 중복되지 않는 전화번호를 받아서 반환
