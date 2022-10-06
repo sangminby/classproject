@@ -1,6 +1,7 @@
 package Ver06;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 //	1. SmartPhone 클래스를 정의합니다. 이 클래스는 연락처 정보를 관리하는 클래스입니다. 
 public class SmartPhone {
@@ -301,61 +302,98 @@ public class SmartPhone {
 //	이름정보를 받아서 중복 여부 체크 후 문자열 반환
 	private String getName() {
 		
-		String name = null;
+String name = null;
 		
-		while(true) {
-			name = sc.nextLine();
+		while (true) {
 			
-			if(name!=null && name.trim().length()>=0) {
-				boolean chk = false;
-				
-				for(int i=0; i<numofContact; i++) {
-					if(name.equals(contacts[i].getName())) {
-						chk = true;
+			// 2.연락처 이름 이력 시에 공백에 대한 예외처리와 영문자와 한글만 허용하는 예외 처리를 해봅시다.
+			try {
+				name = sc.nextLine();
+	
+				if (name != null && name.trim().length() != 0 ) {
+					// 배열에 요소에 같은이름의 요소가 있는지 체크
+					
+					// 이름 문자열 패턴
+					if(!Pattern.matches("^[a-zA-Z가-힣]*$", name)) {
+						throw new Exception("이름에는 영문자와 한글만 입력이 가능합니다.\n다시 입력해주세요.");
+					}
+					
+					boolean check = false;
+					
+					// 이름 검색
+					for(int i=0; i<numofContact ; i++) {
+						if(name.equals(contacts[i].getName())) {
+							check = true;
+							break;
+						}
+					}
+					
+					if(check) {
+						System.out.println("같은 이름의 데이터가 존재합니다.\n다시입력하세요!! >> ");
+						//continue;
+					} else {
 						break;
 					}
-				}
-				
-				if(chk) {
-					System.out.println("중복된 연락처가 저장되어 있습니다. \n 다시 입력해주세요 > ");
+					
 				} else {
-					break;
+					//System.out.println("공백은 허용하지 않습니다. 정상적인 문자를 입력하세요!");
+					throw new Exception("예외발생! 공백은 허용하지 않습니다. 정상적인 문자를 입력하세요!");
 				}
-			} else {
-				System.out.println("공백은 허용하지 않습니다.");
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
 			}
+
 		}
+		
+		
 		return name;
 	}
 	
 //	전화번호를 받아서 중복된 전화번호가 있는지 체크 중복되지 않는 전화번호를 받아서 반환
 	private String getPhoneNumber() {
 		
-		String phonenumber = null;
+String phoneNumber = null;
 		
 		while(true) {
-			phonenumber = sc.nextLine();
 			
-			if(phonenumber!=null && phonenumber.trim().length()>=0) {
-				boolean chk = false;
+			// 전화번호 형식에 맞지 않을 때 예외처리를 하고 중복될 때 예외 상황이 발생하도록 하고 예외 처리를 합시다.
+			try {
+			
+				phoneNumber = sc.nextLine();
 				
-				for(int i=0; i<numofContact; i++) {
+				if(phoneNumber!=null && phoneNumber.trim().length()>0) {
 					
-					if(phonenumber.equals(contacts[i].getNumber())) {
-						chk = true;
+					// 전화번호 패턴 확인
+					if(!Pattern.matches("^\\d{3}-\\d{4}-\\d{4}+$", phoneNumber)) {
+						throw new Exception("000-0000-0000 형식에 맞도록 입력해야합니다.\n다시 입력해주세요.");
+					}
+					
+					boolean check = false;
+					
+					// 중복여부 체크
+					for(int i=0; i<numofContact; i++) {
+						if(phoneNumber.equals(contacts[i].getNumber())) {
+							check = true;
+							break;
+						}
+					}
+					
+					if(check) {
+						//System.out.println("중복된 전화번호가 존재합니다. \n다시입력해주세요. >>");
+						throw new Exception("중복된 전화번호가 존재합니다. \\n다시입력해주세요. >>");
+					} else {
 						break;
 					}
-				}
-				if(chk) {
-					System.out.println("중복된 번호가 있습니다. \n 다시 입력해주세요 > ");
+					
 				} else {
-					break;
-				}	
-			} else {
-				System.out.println("공백은 허용하지 않습니다.");
+					System.out.println("공백은 허용하지 않습니다. 정상적인 전화번호를 입력하세요!");
+				}
+			
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
 			}
 		}
-		return phonenumber;
+		return phoneNumber;
 	}
 	
 }
