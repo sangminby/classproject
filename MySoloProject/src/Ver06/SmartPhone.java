@@ -1,8 +1,6 @@
-
 package Ver06;
 
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 //	1. SmartPhone 클래스를 정의합니다. 이 클래스는 연락처 정보를 관리하는 클래스입니다. 
 public class SmartPhone {
@@ -29,21 +27,6 @@ public class SmartPhone {
 		return sp;
 	}
 	
-//	이름을 입력받고 배열에 해당 이름의 Contact 객체가 있는 index 반환
-	private int getIndex() {
-		
-		String name = sc.nextLine();
-		
-		int searchIndex = -1;
-		
-		for(int i=0; i<numofContact-1; i++) {
-			if(contacts[i].getName().equals(name)) {
-				searchIndex = i;
-				break;
-			}
-		} return searchIndex;
-	}
-	
 //	② 배열에 인스턴스를 저장하고
 	void insertContact() {
 		
@@ -66,13 +49,12 @@ public class SmartPhone {
 		
 		System.out.println("입력을 시작합니다.");
 		
-
 		System.out.print("이름 > ");
 		name = getName();
-
+		
 		System.out.print("번호 > ");
 		number = getPhoneNumber();
-	
+		
 		System.out.print("이메일 > ");
 		email = getString();
 		
@@ -285,6 +267,21 @@ public class SmartPhone {
 		System.out.println();	
 	}
 	
+//	이름을 입력받고 배열에 해당 이름의 Contact 객체가 있는 index 반환
+	private int getIndex() {
+		
+		String name = sc.nextLine();
+		
+		int searchIndex = -1;
+		
+		for(int i=0; i<numofContact-1; i++) {
+			if(contacts[i].getName().equals(name)) {
+				searchIndex = i;
+				break;
+			}
+		} return searchIndex;
+	}
+	
 //	입력 문자가 공백일 경우 다시 입력하도록 하는 기능
 	private String getString() {
 		
@@ -304,51 +301,33 @@ public class SmartPhone {
 //	이름정보를 받아서 중복 여부 체크 후 문자열 반환
 	private String getName() {
 		
-	      String name = null;
-	      
-	      while (true) {
-	         
-	         // 2.연락처 이름 이력 시에 공백에 대한 예외처리와 영문자와 한글만 허용하는 예외 처리를 해봅시다.
-	         try {
-	            name = sc.nextLine();
-	   
-	            if (name != null && name.trim().length() != 0 ) {
-	               // 배열에 요소에 같은이름의 요소가 있는지 체크
-	               
-	               // 이름 문자열 패턴
-	               if(!Pattern.matches("^[a-zA-Z가-힣]*$", name)) {
-	                  throw new Exception("이름에는 영문자와 한글만 입력이 가능합니다.\n다시 입력해주세요.");
-	               }
-	               
-	               boolean check = false;
-	               
-	               // 이름 검색
-	               for(int i=0; i<numofContact ; i++) {
-	                  if(name.equals(contacts[i].getName())) {
-	                     check = true;
-	                     break;
-	                  }
-	               }
-	               
-	               if(check) {
-	                  System.out.println("같은 이름의 데이터가 존재합니다.\n다시입력하세요!! >> ");
-	                  //continue;
-	               } else {
-	                  break;
-	               }
-	               
-	            } else {
-	               //System.out.println("공백은 허용하지 않습니다. 정상적인 문자를 입력하세요!");
-	               throw new Exception("예외발생! 공백은 허용하지 않습니다. 정상적인 문자를 입력하세요!");
-	            }
-	         } catch (Exception e) {
-	            System.out.println(e.getMessage());
-	         }
-
-	      }
-	      return name;
-
-	}	
+		String name = null;
+		
+		while(true) {
+			name = sc.nextLine();
+			
+			if(name!=null && name.trim().length()>=0) {
+				boolean chk = false;
+				
+				for(int i=0; i<numofContact; i++) {
+					if(name.equals(contacts[i].getName())) {
+						chk = true;
+						break;
+					}
+				}
+				
+				if(chk) {
+					System.out.println("중복된 연락처가 저장되어 있습니다. \n 다시 입력해주세요 > ");
+				} else {
+					break;
+				}
+			} else {
+				System.out.println("공백은 허용하지 않습니다.");
+			}
+		}
+		return name;
+	}
+	
 //	전화번호를 받아서 중복된 전화번호가 있는지 체크 중복되지 않는 전화번호를 받아서 반환
 	private String getPhoneNumber() {
 		
@@ -357,7 +336,7 @@ public class SmartPhone {
 		while(true) {
 			phonenumber = sc.nextLine();
 			
-			if(phonenumber!=null && phonenumber.trim().length()>0) {
+			if(phonenumber!=null && phonenumber.trim().length()>=0) {
 				boolean chk = false;
 				
 				for(int i=0; i<numofContact; i++) {
