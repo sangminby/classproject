@@ -302,7 +302,7 @@ public class SmartPhone {
 //	이름정보를 받아서 중복 여부 체크 후 문자열 반환
 	private String getName() {
 		
-String name = null;
+		String name = null;
 		
 		while (true) {
 			
@@ -352,7 +352,7 @@ String name = null;
 //	전화번호를 받아서 중복된 전화번호가 있는지 체크 중복되지 않는 전화번호를 받아서 반환
 	private String getPhoneNumber() {
 		
-String phoneNumber = null;
+		String phoneNumber = null;
 		
 		while(true) {
 			
