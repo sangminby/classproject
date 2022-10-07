@@ -304,45 +304,46 @@ public class SmartPhone {
 		
 		String name = null;
 		
-//		2. 연락처 이름 이력 시에 공백에 대한 예외처리와 영문자와 한글만 허용하는 예외 처리를 해봅시다
-		
-		while(true) {
+		while (true) {
 			
+			// 2.연락처 이름 이력 시에 공백에 대한 예외처리와 영문자와 한글만 허용하는 예외 처리를 해봅시다.
 			try {
-				
-				name=sc.nextLine();
-				
-				if(!(name != null && name.trim().length() != 0)) {
-					throw new Exception("공백 사용불가");
-				}	
+				name = sc.nextLine();
+	
+				if (name != null && name.trim().length() != 0 ) {
+					// 배열에 요소에 같은이름의 요소가 있는지 체크
 					
-				if(!Pattern.matches("^[a-zA-Z가-힣]*$", name)) {
-					throw new Exception("영문자와 한글만 입력가능합니다. \n다시 입력해주세요 > ");
-				}
-				
-				boolean chk = false;
-				
-				for(int i=0; i<numofContact; i++) {
-					if(name.equals(contacts[i].getName())) {
-						chk = true;
+					// 이름 문자열 패턴
+					if(!Pattern.matches("^[a-zA-Z가-힣]*$", name)) {
+						throw new Exception("이름에는 영문자와 한글만 입력이 가능합니다.\n다시 입력해주세요.");
+					}
+					
+					boolean check = false;
+					
+					// 이름 검색
+					for(int i=0; i<numofContact ; i++) {
+						if(name.equals(contacts[i].getName())) {
+							check = true;
+							break;
+						}
+					}
+					
+					if(check) {
+						System.out.println("같은 이름의 데이터가 존재합니다.\n다시입력하세요!! >> ");
+						//continue;
+					} else {
 						break;
-					} 
-				}
-				
-				if(chk) {
-					throw new Exception("같은 이름의 데이터가 존재합니다. \n다시 입력해주세요 > ");
+					}
+					
 				} else {
-					break;
+					//System.out.println("공백은 허용하지 않습니다. 정상적인 문자를 입력하세요!");
+					throw new Exception("예외발생! 공백은 허용하지 않습니다. 정상적인 문자를 입력하세요!");
 				}
-				
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
-		}	
+		}
 		return name;
-		
-		
-		
 	}
 	
 //	전화번호를 받아서 중복된 전화번호가 있는지 체크 중복되지 않는 전화번호를 받아서 반환
