@@ -11,8 +11,6 @@ public class SalesMain {
 		
 		Seller seller = new Seller(p);
 		
-		
-		
 		try {
 			c1.start();
 			c2.start();
