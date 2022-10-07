@@ -28,8 +28,8 @@ public class MessageClient {
 			
 			while(true) {
 				
-				str2 = din.readUTF();
-				System.out.println("server : " + str2);
+//				str2 = din.readUTF();
+//				System.out.println("server : " + str2);
 				
 				str1 = sc.nextLine();
 				
