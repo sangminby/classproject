@@ -22,6 +22,7 @@ public class SmartPhoneMain {
 				
 				switch(select) {
 //				④ 배열의 모든 요소를 저장합니다.
+				
 					case 1 :
 						sp.insertContact();
 						break;
