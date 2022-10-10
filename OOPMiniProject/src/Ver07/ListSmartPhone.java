@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 //	1. SmartPhone 클래스를 정의합니다. 이 클래스는 연락처 정보를 관리하는 클래스입니다. 
-public class SmartPhone {
+public class ListSmartPhone {
 
 //	① SmartPhone 클래스의 인스턴스를 생성합니다.
 	List<Contact> contacts;
@@ -21,7 +21,7 @@ public class SmartPhone {
 //	③ 10번 반복해서 배열에 추가합니다.
 	private static ListSmartPhone sp = new ListSmartPhone();
 	
-	public static SmartPhone getInstance() {
+	public static ListSmartPhone getInstance() {
 		if(sp==null) {
 			sp = new ListSmartPhone();
 		}
@@ -46,8 +46,8 @@ public class SmartPhone {
 //	② 배열에 인스턴스를 저장하고
 	void insertContact() {
 		
-		if(numofContact>contacts.length) {
-			System.out.println("최대저장가능 개수는 " + contacts + "개 입니다.");
+		if(contacts.size() == 10) {
+			System.out.println("최대저장가능 개수는 10개 입니다.");
 			return;
 		}
 		
@@ -139,19 +139,19 @@ public class SmartPhone {
 			// 인스턴스 생성
 			contact = new CustomerContact(name,number,email,address,birth,group,company,product,manager);
 		}
-		contacts[numofContact++] = contact;
+		contacts.add(contact);
 	}
 	
 //	④ 배열의 저장된 데이터의 리스트를 출력
 	void printAllDate() {
 		System.out.println("전체 데이터 =======================");
 		
-		if(numofContact==0) {
+		if(contacts.isEmpty()) {
 			System.out.println("저장된 데이터가 없습니다.");
 			return;
 		}
-		for(int i=0; i<numofContact; i++) {
-			contacts[i].printData();
+		for(int i=0; i<contacts.size(); i++) {
+			contacts.get(i).printData();
 		}
 		
 	}
@@ -170,7 +170,7 @@ public class SmartPhone {
 		if(searchIndex<0) {
 			System.out.println("검색하신 " + name + "의 결과가 없습니다.");
 		} else {
-			contacts[searchIndex].printData();
+			contacts.get(searchIndex).printData();
 		}
 	}
 
@@ -185,10 +185,7 @@ public class SmartPhone {
 		if(searchIndex<0) {
 			System.out.println("삭제하고자 하는 이름의 데이터가 없습니다.");
 		} else {
-			for(int i=searchIndex; i<numofContact-1; i++) {
-				contacts[i] = contacts[i+1];
-			}
-			numofContact--;
+			contacts.remove(searchIndex);
 			System.out.println("데이터가 삭제됐습니다.");
 		}		
 	}
@@ -206,7 +203,7 @@ public class SmartPhone {
 			return;
 		}
 		
-		Contact contact = contacts[searchIndex];
+		Contact contact = contacts.get(searchIndex);
 		
 		System.out.println("데이터 수정을 진행합니다.");
 		
@@ -243,11 +240,11 @@ public class SmartPhone {
 			contact.setAddress(newAddress);
 		}
 		System.out.println(
-				"변경하고자 하는 생일을 입력해주세요.(현재값: " + contact.getBirth() + ")\n" 
+				"변경하고자 하는 생일을 입력해주세요.(현재값: " + contact.getBirthday() + ")\n" 
 						+ "변경하지 않으려면 엔터를 치세요 >");
 		String newBirth = sc.nextLine();
 		if(newBirth != null && newBirth.trim().length()>0) {
-			contact.setBirth(newBirth);
+			contact.setBirthday(newBirth);
 		}
 		System.out.println(
 				"변경하고자 하는 그룹을 입력해주세요.(현재값: " + contact.getGroup() + ")\n" 
@@ -339,8 +336,8 @@ public class SmartPhone {
 			if(name!=null && name.trim().length()!=0) {
 				boolean chk = false;
 				
-				for(int i=0; i<numofContact; i++) {
-					if(name.equals(contacts[i].getName())) {
+				for(int i=0; i<contacts.size(); i++) {
+					if(name.equals(contacts.get(i).getName())) {
 						chk = true;
 						break;
 					}
@@ -369,9 +366,9 @@ public class SmartPhone {
 			if(phonenumber!=null && phonenumber.trim().length()>0) {
 				boolean chk = false;
 				
-				for(int i=0; i<numofContact; i++) {
+				for(int i=0; i<contacts.size(); i++) {
 					
-					if(phonenumber.equals(contacts[i].getNumber())) {
+					if(phonenumber.equals(contacts.get(i).getNumber())) {
 						chk = true;
 						break;
 					}
