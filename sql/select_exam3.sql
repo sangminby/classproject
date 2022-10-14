@@ -66,7 +66,7 @@ select max(sal)- min(sal) from emp;
 -- 결과를 급여에 대한 내림차순으로 정렬하여 출력하시오.
 select job, min(sal)
 from emp
-group by job having min(sal) > 2000 order by min(sal) desc;
+where mgr is not null group by job having min(sal) > 2000 order by min(sal) desc;
 
 -- 29. 각 부서에 대해 부서번호, 사원 수, 부서 내의 모든 사원의 평균 급여를 출력하시오.
 -- 평균 급여는 소수점 둘째 자리로 반올림 하시오.
@@ -85,9 +85,9 @@ group by deptno order by deptno;
 -- 31. 업무를 표시한 다음 해당 업무에 대해 부서 번호별 급여 및 부서 10, 20, 30의 급여 총액을 각각 출력하시오. 
 -- 별칭은 각 job, dno, 부서 10, 부서 20, 부서 30, 총액으로 지정하시오. 
 -- ( hint. Decode, group by )
-select job, (deptno) as dno, decode(deptno, 10, sum(sal)) as 부서10,
+select job, deptno as dno, decode(deptno, 10, sum(sal)) as 부서10,
                            decode(deptno, 20, sum(sal)) as 부서20,
                            decode(deptno, 30, sum(sal)) as 부서30,
-                           (sum(sal)) as 총액
+                           sum(sal) as 총액
 from emp
 group by job, deptno order by deptno;
