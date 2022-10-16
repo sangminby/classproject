@@ -339,18 +339,13 @@ public class SmartPhone {
 					
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
-<<<<<<< Updated upstream
 			} 
 		}
 		return name;	
-		
-=======
-			}
-		}	
-		return name;
-	
->>>>>>> Stashed changes
 	}
+
+	
+	
 	
 //	전화번호를 받아서 중복된 전화번호가 있는지 체크 중복되지 않는 전화번호를 받아서 반환
 	private String getPhoneNumber() {
