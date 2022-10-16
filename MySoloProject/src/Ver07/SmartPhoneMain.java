@@ -8,17 +8,16 @@ public class SmartPhoneMain {
 		SmartPhone sp = SmartPhone.getInstance();
 		
 		while(true) {
-			printMenu();
-			int select = Integer.parseInt(sp.sc.nextLine());
 			
 //		1. 메뉴 입력 시 발생할 수 있는 예외에 대하여 예외 처리합시다. 
 		try {
-			if(!(select<0 && select>7)) {
-				throw new Exception();
+			printMenu();
+			int select = Integer.parseInt(sp.sc.nextLine());
+			if(!(select >= 1 && select <= 6)) {
+				
+				throw new Exception("\n1~6까지 메뉴중 선택해주세요.\n");
 			}
-		} catch(Exception e) {
-			System.out.println("\n1~6까지 메뉴중 선택해주세요.\n");
-		}
+		
 			switch(select) {
 //			④ 배열의 모든 요소를 저장합니다.
 				case 1 :
@@ -44,10 +43,11 @@ public class SmartPhoneMain {
 					System.out.println("프로그램을 종료합니다");
 					return;
 			}
-		}	
-		 
-		
 			
+			} catch(Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
 }
 	
 	static void printMenu() {

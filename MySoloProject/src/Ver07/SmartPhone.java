@@ -13,17 +13,17 @@ public class SmartPhone {
 	Scanner sc;
 	
 //	② 사용자로부터 입력을 받아 Contact 인스턴스를 생성해서 SmartPhone 클래스의 인스턴스가 가지고 있는 배열에 추가합니다.
-	private ListSmartPhone() {
+	private SmartPhone() {
 		contacts = new ArrayList<>();
 		sc = new Scanner(System.in);
 	}
 	
 //	③ 10번 반복해서 배열에 추가합니다.
-	private static ListSmartPhone sp = new ListSmartPhone();
+	private static SmartPhone sp = new SmartPhone();
 	
 	public static SmartPhone getInstance() {
 		if(sp==null) {
-			sp = new ListSmartPhone();
+			sp = new SmartPhone();
 		}
 		return sp;
 	}
@@ -46,8 +46,8 @@ public class SmartPhone {
 //	② 배열에 인스턴스를 저장하고
 	void insertContact() {
 		
-		if(numofContact>contacts.length) {
-			System.out.println("최대저장가능 개수는 " + contacts + "개 입니다.");
+		if(contacts.size() == 10) {
+			System.out.println("최대저장가능 개수는 10개 입니다.");
 			return;
 		}
 		
@@ -65,40 +65,11 @@ public class SmartPhone {
 		
 		System.out.println("입력을 시작합니다.");
 		
-//		2. 연락처 이름 이력 시에 공백에 대한 예외처리와 영문자와 한글만 허용하는 예외 처리를 해봅시다. 
-		boolean chk = false;
-		
-		while(!chk) {
-			System.out.print("이름 > ");
-			name = getName();
-			chk = Pattern.matches("^[a-zA-Z가-힣ㄱ-ㅎ]*$", name);
-			
-			try {
-				if(!chk) {
-					throw new Exception();
-				}
-				
-			} catch (Exception e) {
-				System.out.println("영문자와 한글만 입력가능합니다. \n 다시 입력해주세요 > ");
-			}
-		}
-		
-//		3. 전화번호 형식에 맞지 않을 때 예외처리를 하고 중복될 때 예외 상황이 발생하도록 하고 예외 처리를 합시다.
-		boolean chk1 = false;
-		
-		while(!chk1) {
-			System.out.print("번호 > ");
-			number = getPhoneNumber();
-			chk1 = Pattern.matches("^(\\d{3})-(\\d{4})-(\\d{4})$", number);
-			
-			try {
-				if(!chk1) {
-					throw new Exception();
-				}
-			} catch (Exception e) {
-				System.out.println("010-0000-0000 형식에 맞게 입력해주세요 > ");
-			}
-		}
+		System.out.print("이름 > ");
+		name = getName();
+	
+		System.out.print("번호 > ");
+		number = getPhoneNumber();
 	
 		System.out.print("이메일 > ");
 		email = getString();
@@ -139,19 +110,19 @@ public class SmartPhone {
 			// 인스턴스 생성
 			contact = new CustomerContact(name,number,email,address,birth,group,company,product,manager);
 		}
-		contacts[numofContact++] = contact;
+		contacts.add(contact);
 	}
 	
 //	④ 배열의 저장된 데이터의 리스트를 출력
 	void printAllDate() {
 		System.out.println("전체 데이터 =======================");
 		
-		if(numofContact==0) {
+		if(contacts.isEmpty()) {
 			System.out.println("저장된 데이터가 없습니다.");
 			return;
 		}
-		for(int i=0; i<numofContact; i++) {
-			contacts[i].printData();
+		for(int i=0; i<contacts.size(); i++) {
+			contacts.get(i).printData();
 		}
 		
 	}
@@ -170,7 +141,7 @@ public class SmartPhone {
 		if(searchIndex<0) {
 			System.out.println("검색하신 " + name + "의 결과가 없습니다.");
 		} else {
-			contacts[searchIndex].printData();
+			contacts.get(searchIndex).printData();
 		}
 	}
 
@@ -185,10 +156,9 @@ public class SmartPhone {
 		if(searchIndex<0) {
 			System.out.println("삭제하고자 하는 이름의 데이터가 없습니다.");
 		} else {
-			for(int i=searchIndex; i<numofContact-1; i++) {
-				contacts[i] = contacts[i+1];
-			}
-			numofContact--;
+			
+			contacts.remove(searchIndex);
+			
 			System.out.println("데이터가 삭제됐습니다.");
 		}		
 	}
@@ -206,7 +176,7 @@ public class SmartPhone {
 			return;
 		}
 		
-		Contact contact = contacts[searchIndex];
+		Contact contact = contacts.get(searchIndex);
 		
 		System.out.println("데이터 수정을 진행합니다.");
 		
@@ -339,8 +309,8 @@ public class SmartPhone {
 			if(name!=null && name.trim().length()!=0) {
 				boolean chk = false;
 				
-				for(int i=0; i<numofContact; i++) {
-					if(name.equals(contacts[i].getName())) {
+				for(int i=0; i<contacts.size(); i++) {
+					if(name.equals(contacts.get(i).getName())) {
 						chk = true;
 						break;
 					}
@@ -369,9 +339,9 @@ public class SmartPhone {
 			if(phonenumber!=null && phonenumber.trim().length()>0) {
 				boolean chk = false;
 				
-				for(int i=0; i<numofContact; i++) {
+				for(int i=0; i<contacts.size(); i++) {
 					
-					if(phonenumber.equals(contacts[i].getNumber())) {
+					if(phonenumber.equals(contacts.get(i).getNumber())) {
 						chk = true;
 						break;
 					}
