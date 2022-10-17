@@ -6,7 +6,7 @@ select * from dept;
 -- 32. EQUI 조인을 사용하여 SCOTT 사원의 부서번호와 부서 이름을 출력하시오.
 select e.ename, e.deptno, d.dname
 from emp e, dept d
-where e.deptno=d.deptno and ename='SCOTT';
+where e.deptno=d.deptno and e.ename='SCOTT';
 
 -- 33. INNER JOIN과 ON 연산자를 사용하여 사원 이름과 함께 그 사원이 소속된 부서이름과 지역 명을 출력하시오.
 select e.ename, d.dname, d.loc
@@ -43,13 +43,7 @@ select e2.ename, e2.hiredate
 from emp e1, emp e2
 where e1.hiredate < e2.hiredate and e1.ename='WARD' order by hiredate;
 
--- 42. SELF JOIN 을 사용하여 관리자보다 먼저 입사한 모든 사원의 이름 및 입사일을 관리자의 이름 및 입사일과 함께 출력하시오.
-select *
+-- 42. SELF JOIN 을 사용하여 각 사원의 관리자보다 먼저 입사한 모든 사원의 이름 및 입사일을 관리자의 이름 및 입사일과 함께 출력하시오.
+select e1.ename, e1.hiredate, e2.ename, e2.hiredate
 from emp e1, emp e2
-where ;
-
-
-
-
-
-
+where e1.mgr=e2.empno and e1.hiredate < e2.hiredate;
