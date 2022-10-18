@@ -128,4 +128,4 @@ delete from emp03 where empno=7839 ;
 delete from emp03 where deptno=40 ;
 
 -- sales 부서의 사원이 모두 퇴사 -> 삭제
-delete from emp03 where deptno=(select deptno, loc from dept where dname='SALES');
+delete from emp03 where deptno=(select deptno from dept where dname='SALES');
