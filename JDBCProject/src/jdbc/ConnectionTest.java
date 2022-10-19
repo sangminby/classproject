@@ -13,9 +13,9 @@ public class ConnectionTest {
 			//Class.forName("oracle.jdbc.driver.OracleDriver");
 			
 			// 2. Connection 객체 생성
-			//String dbUr1 = ("jdbc:oracle:thin:@localhost:1521:xe") ;
-			String dbUr1 = ("jdbc:mysql://localhost:3306/project") ;
-			Connection conn = DriverManager.getConnection(dbUr1, "root", "admin");
+			String dbUr1 = ("jdbc:oracle:thin:@localhost:1521:xe") ;
+			//String dbUr1 = ("jdbc:mysql://localhost:3306/project") ;
+			Connection conn = DriverManager.getConnection(dbUr1, "scott", "tiger");
 			
 			if(conn != null) {
 				System.out.println("데이터베이스 연결!!!");
