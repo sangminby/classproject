@@ -82,3 +82,10 @@ create index index_emp01_ename on emp01(ename) ;
 drop index index_emp01_ename ;
 
 select * from emp01 where empno=1111 and ename like '%SON%';
+
+select * from dept;
+desc dept ; 
+commit; 
+
+insert into dept values (50, '개발', '서울') ;
+rollback;
