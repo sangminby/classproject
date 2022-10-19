@@ -14,7 +14,7 @@ public class ConnectionTest {
 			
 			// 2. Connection 객체 생성
 			//String dbUr1 = ("jdbc:oracle:thin:@localhost:1521:xe") ;
-			String dbUr1 = ("jdbc:mysql://localhost:3306/sakila") ;
+			String dbUr1 = ("jdbc:mysql://localhost:3306/project") ;
 			Connection conn = DriverManager.getConnection(dbUr1, "root", "admin");
 			
 			if(conn != null) {
