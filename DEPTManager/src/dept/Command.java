@@ -25,12 +25,4 @@ public class Command {
 		command.put(6, new ExitController());
 	}
 
-	
-
 }
-
-
-
-
-
-
