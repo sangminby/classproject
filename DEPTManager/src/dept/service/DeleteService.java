@@ -5,31 +5,28 @@ import java.sql.SQLException;
 
 import dept.dao.Dao;
 import dept.dao.OracleDao;
-import dept.domain.Dept;
 import dept.util.ConnectionProvider;
 
-public class InsertService {
-	
+public class DeleteService {
+
 	Dao dao = new OracleDao();
-	
-	public int insert(Dept dept) {
-		
+
+	public int delete(int deptno) {
+
 		int result = 0;
-		
 		Connection conn = null;
-		
+
 		try {
 			conn = ConnectionProvider.getConnection();
-			
-			result = dao.insert(conn, dept);
-			
+
+			result = dao.delete(conn, deptno);
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return result;
-		
-		
+
 	}
 
 }
