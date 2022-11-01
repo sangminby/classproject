@@ -1,0 +1,25 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(224, 224, 224);
+}
+
+#wrap {
+    overflow: hidden;
+}
+
+section {
+    width: 610px;
+
+    background-color: white;
+
+    float: left; 
+}
+
+article>h2 {
+    font-size: 34px;
+}
