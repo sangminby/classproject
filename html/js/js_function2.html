@@ -11,58 +11,59 @@
 </html>
 <script>
 
-    function callTenTimes(callback) {
+    function callTenTimes(callback){
 
-        for(let i=0; i<10; i++){
+        for(let i=0; i<10 ;i++){
             console.log(i+1)
         }
 
-        for (let index = 0; index < 10; index++) {
-            callback()
-        }
+        //for (let index = 0; index < 10 ; index++) {
+           callback()           
+        //}
     }
 
-    let fn = function() {
+    let fn = function(){
         console.log('외부 함수')
     }
 
-    // callTenTimes(fn)
+    //callTenTimes(fn)
 
-    // callTenTimes(function() {
-    //     console.log('aaa')
-    // })
+    /* callTenTimes(function(){
+        console.log('aaa')
+    }) */
 
-    ///////////////////////////////////////////////////////////////////////////////////////
 
-    const arr = [1, 2, 3, 4, 5]
+    //////////////////////////////
 
-    arr.forEach(function(num, index) {
-        console.log(index, num)
+    const arr = [1,2,3,4,5]
+
+    
+    arr.forEach(function(num){
+        console.log(num)
     })
 
     console.log('')
 
-
-    let arr1 = arr.map(function(num, index) {
+    let arr1 = arr.map(function(num, index){
         return num*num
     })
 
-    // arr1.forEach(console.log)
-    arr1.forEach(function(num, index) {
+    //arr1.forEach(console.log)
+    arr1.forEach(function(num, index){
         console.log(index, num)
     })
 
-
-    let arr2 = arr.filter(function(num, index) {
+    let arr2 = arr.filter(function(num, index){
         return num%2 == 0
-    }).map(function(num, index) {
+    }).map(function(num, index){
         return num+10
     })
 
     console.log('')
 
-    arr2.forEach(function(num, index) {
+    arr2.forEach(function(num, index){
         console.log(index, num)
     })
+
 
 </script>
