@@ -68,7 +68,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // 이벤트 연결
     addBtn.addEventListener('click', addTodo)
 
-
-
-
 })
