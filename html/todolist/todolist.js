@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         input.value = ''
     }
+    
     const removeTodo = function(key) {
         const delElement = document.querySelector(`div[data-key="${key}"]`)
         todolist.removeChild(delElement)
