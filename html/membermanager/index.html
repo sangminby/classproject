@@ -80,33 +80,33 @@
             dbtn.textContent = '삭제'
 
 
-            ebtn.addEventListener('click', (event) => {
+            ebtn.addEventListener('change', (event) => {
 
                 const editBtn = document.querySelector('#editBtn')
-                editBtn.addEventListener('click',(event) =>{
-                const editPw = document.querySelector('#editPw');
-                const editRePw = document.querySelector('#editRePw')
-                const editName = document.querySelector('#editName');
+                editBtn.addEventListener('change',(event) =>{
+                    const editPw = document.querySelector('#editPw');
+                    const editRePw = document.querySelector('#editRePw')
+                    const editName = document.querySelector('#editName');
                 
-                if(!(/[a-zA-Z0-9]/).test(editPw.value)) {
-                    alert('패스워드는 영문자와 숫자만 입력가능합니다.')
-                    return
-                }
+                    if(!(/[a-zA-Z0-9]/).test(editPw.value)) {
+                        alert('패스워드는 영문자와 숫자만 입력가능합니다.')
+                        return
+                    }
 
-                if(editRePw.value !== editPw.value) {
-                    alert('비밀번호를 확인해주세요')
-                    return
-                }
+                    if(editRePw.value !== editPw.value) {
+                        alert('비밀번호를 확인해주세요')
+                        return
+                    }
 
-                if(!(/[a-zA-Z가-힣]/).test(editName.value)){
-                    alert('이름은 영문자와 한글만 입력가능합니다.')
-                    return
-                } 
+                    if(!(/[a-zA-Z가-힣]/).test(editName.value)){
+                        alert('이름은 영문자와 한글만 입력가능합니다.')
+                        return
+                    } 
 
-                else{
-                    pass.textContent = editPw.value
-                    uname.textContent = editName.value
-                }
+                    else{
+                        pass.textContent = editPw.value
+                        uname.textContent = editName.value
+                    }
 
             })
 
