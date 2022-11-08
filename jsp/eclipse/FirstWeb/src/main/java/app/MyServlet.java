@@ -22,7 +22,5 @@ public class MyServlet extends HttpServlet {
 		out.println("<body><h1>new Page</h1></body></html>");
 	
 	}
-
-	
 	
 }
