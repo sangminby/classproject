@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.time.LocalDate" %><%--
   Created by IntelliJ IDEA.
   User: cheoho-hi
   Date: 2022-11-07
@@ -11,6 +11,11 @@
     <title>로그인 페이지</title>
 </head>
 <body>
-<h1>로그인 페이지</h1>
+    <h1>로그인 페이지</h1>
+    <%
+        request.getParameter("aaaa");
+        LocalDate now = LocalDate.now();
+    %>
+    <%= now %>
 </body>
 </html>
