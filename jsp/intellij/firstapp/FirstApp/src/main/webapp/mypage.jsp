@@ -12,7 +12,18 @@
 </head>
 <body>
 
-  <h1>로그인 후 보여지는 페이지</h1>
+    <%
+
+        String loginid = (String) session.getAttribute("loginid");
+
+        if(loginid == null) {
+            response.sendRedirect("login.html");
+        }
+
+    %>
+
+    <h1>로그인 후 보여지는 페이지 : <%= loginid %></h1>
+    <a href="logout.jsp">로그아웃</a>
 
 </body>
 </html>
