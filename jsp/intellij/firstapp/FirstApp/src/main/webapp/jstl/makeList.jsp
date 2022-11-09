@@ -17,6 +17,7 @@
   <%
 
     List<Member> members = new ArrayList<>();
+
     members.add(new Member("cool00", "1110", "COOL0"));
     members.add(new Member("cool01", "1111", null));
     members.add(new Member("cool02", "1112", "COOL0"));
