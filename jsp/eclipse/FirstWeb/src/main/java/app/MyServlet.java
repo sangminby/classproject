@@ -20,7 +20,7 @@ public class MyServlet extends HttpServlet {
 		PrintWriter out = resp.getWriter();
 		out.println("<html><head><title>newPage</title></head>");
 		out.println("<body><h1>new Page</h1></body></html>");
-		
+	
 	}
-
+	
 }

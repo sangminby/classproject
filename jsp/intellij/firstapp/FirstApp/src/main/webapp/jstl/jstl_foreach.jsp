@@ -13,16 +13,15 @@
 </head>
 <body>
 
-    <c:forTokens items="손흥민|010-1234-5678|런던" delims="|" var="str" varStatus="stat">
+    <c:forTokens items="손흥민, 010-1234-5678, 런던" delims="," var="str" varStatus="stat">
         <c:if test="${stat.index == 1}">
-        ${str} <br>
+            ${str} <br>
         </c:if>
     </c:forTokens>
-
     <hr>
 
-
     <table border="1">
+
         <tr>
             <th>index</th>
             <th>count</th>
@@ -41,19 +40,12 @@
             </tr>
         </c:forEach>
 
-
-
     </table>
-
-
-
-
-
     <hr>
 
-    <h2>1~5 까지 반복 출력</h2>
+    <h2>1~5까지 반복 출력</h2>
     <c:forEach var="num" begin="1" end="5">
-        <h3>${num}</h3>
+        <h3> ${num} </h3>
     </c:forEach>
 
 </body>

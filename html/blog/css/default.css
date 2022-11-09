@@ -1,15 +1,13 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
-
 body {
     font-family: 'Nanum Gothic', sans-serif;
 
-    width : 780px;
+    width: 780px;
     background-color: #fff;
     border: 1px solid #aaa;
 
@@ -21,10 +19,9 @@ body {
     padding: 10px;
 }
 
-
 /* header */
 header {
-    padding:  30px;
+    padding: 30px;
 }
 
 .title {
@@ -36,11 +33,10 @@ header>p {
     margin-top: 5px;
 }
 
-
 /* nav */
 nav {
     height: 40px;
-
+    
     border-top: 1px solid #aaa;
     border-bottom: 1px solid #aaa;
 
@@ -57,24 +53,20 @@ nav>ul {
 
 nav>ul>li {
     float: left;
-
     width: 120px;
     text-align: center;
     line-height: 40px;
 }
 
-
-
 nav>div {
     float: right;
     width: 330px;
     text-align: right;
-  
+
     padding: 8px 0;
 }
 
 nav>div>input[type=text] {
-    
     height: 20px;
     width: 150px;
 
@@ -83,26 +75,22 @@ nav>div>input[type=text] {
 
     outline: 0;
     border: 1px solid #aaa;
-
+    
     vertical-align: middle;
 
     margin-right: -6px;
-
 }
 
 nav>div>input[type=button] {
-    
     width: 50px;
     height: 22px;
     border-radius: 0 10px 10px 0;
 
     outline: 0;
     border: 1px solid #aaa;
-    vertical-align: middle;
-    
-    
-}
 
+    vertical-align: middle;
+}
 
 /* wrap */
 #wrap {
@@ -111,7 +99,8 @@ nav>div>input[type=button] {
 
 /* section */
 section {
-    width : 590px;
+    width: 590px;
+
     float: left;
 }
 
@@ -126,7 +115,7 @@ article>h2 {
     margin: 10px 0;
 }
 
-article>h2 + p {
+article>h2+p {
     font-size: small;
 }
 
@@ -138,11 +127,11 @@ article>img {
 .lh-180 {
     line-height: 180%;
 }
-
-/* asdie */
+/* aside */
 aside {
     width: 190px;
     height: 200px;
+
     float: right;
 }
 
@@ -156,13 +145,10 @@ aside>ul {
     margin-top: 5px;
 }
 
-
-
 /* footer */
 footer {
     height: 40px;
 
     text-align: center;
     line-height: 40px;
-    
 }

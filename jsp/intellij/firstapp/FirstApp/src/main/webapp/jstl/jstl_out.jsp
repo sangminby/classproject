@@ -10,30 +10,34 @@
 <html>
 <head>
     <title>Title</title>
+
     <style>
-        .red {
+        .red{
             color: red;
         }
     </style>
+
 </head>
 <body>
 
     ${members}
     <hr>
     <br>
-    ${members[0]} <br>
-    ${members[1]} /${members[1].name} <br><br>
+
+    ${members[0]}
+    <br>
+
+    ${members[1]} / ${members[1].name}
+    <br>
 
     <c:out value="${members[0].name}">
         <span class="red">입력정보 없음</span>
     </c:out>
-
     <br>
 
     <c:out value="${members[1].name}" escapeXml="false">
         <span class="red">입력정보 없음</span>
     </c:out>
-
 
 </body>
 </html>

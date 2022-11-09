@@ -13,22 +13,19 @@
 </head>
 <body>
 
-<c:if test="${10 eq 10}">
-    참일 때 보여집니다!
-</c:if>
+    <c:if test="${10 eq 10}">
+        참일 때 보여집니다.
+    </c:if>
+    <hr>
 
-<hr>
+    이름 :
+    <c:if test="${members[1].name eq null}">
+        입력된 정보가 없습니다.
+    </c:if>
+    <hr>
 
-이름 :
-<c:if test="${members[1].name eq null}">
-    입력된 정보가 없습니다.
-</c:if>
-
-<hr>
-
-<c:if test="${members[0].name == 'COOL0'}" var="result" scope="request"/>
-members[0].name == 'COOL0' => ${result}
-
+    <c:if test="${members[0].name == 'COOL0'}" var="result" scope="request"/>
+    members[0].name == 'COOL0' => ${result}
 
 </body>
 </html>

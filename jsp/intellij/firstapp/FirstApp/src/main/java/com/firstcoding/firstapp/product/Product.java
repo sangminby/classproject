@@ -9,11 +9,9 @@ public class Product {
     public String[] getList() {
         return list;
     }
-
     public int getPrice() {
         return price;
     }
-
 
 
 }

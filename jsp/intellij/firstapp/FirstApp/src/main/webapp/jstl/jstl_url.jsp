@@ -13,21 +13,19 @@
 </head>
 <body>
 
-    <c:url value="index.jsp" var="urlIndex" />
-    ${urlIndex} <br>
+    <c:url value="index.jsp" var="urlIndex"/>
+    ${urlIndex}
+    <br>
 
     <c:url value="/index.jsp" var="urlIndex2"/>
     ${urlIndex2}
-
     <br>
-    <c:url value="/index.jsp"/>
 
+    <c:url value="/index.jsp"/>
     <br>
 
     <a href="<c:url value="/index.jsp"/>">홈으로 가기</a>
     <a href="<c:url value="/el/elObj.jsp"/>">elObj</a>
-
-
     <br>
 
     <c:url value="/jstl/jstl_choosewhen.jsp" var="url">
@@ -35,9 +33,7 @@
         <c:param name="index">1</c:param>
     </c:url>
 
-    <a href="${url}">${url}</a>
-
-
+    <a href="${url}"> ${url} </a>
 
 </body>
 </html>

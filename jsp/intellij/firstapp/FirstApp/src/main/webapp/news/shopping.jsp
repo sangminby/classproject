@@ -8,5 +8,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <h3>쇼핑</h3>
 <hr>
-- 사탕 1세트 100원 특가!!!!
+- 사탕 1세트 100원 특가!!!
 - 커피 1잔 무료 이벤트!

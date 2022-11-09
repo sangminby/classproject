@@ -1,2 +1,2 @@
 
-insert into test_table (memo) values ('안녕');
+insert into test_table (memo) values('안녕');
