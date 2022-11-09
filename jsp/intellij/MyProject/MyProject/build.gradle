@@ -3,7 +3,7 @@ plugins {
     id 'war'
 }
 
-group 'com.MyProject'
+group 'com.myproject'
 version '1.0-SNAPSHOT'
 
 repositories {

@@ -3,7 +3,7 @@ package com.firstcoding.firstapp;
 import java.io.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
-                                    // http://localhost:8080/first/hello-servlet
+                                 // http://localhost:8080/first/hello-servlet
 @WebServlet(name = "helloServlet", value = "/hello-servlet")
 public class HelloServlet extends HttpServlet {
     private String message;
