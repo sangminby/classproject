@@ -12,22 +12,18 @@
 </head>
 <body>
 
-  <%
+<%
+      Enumeration<String> list = request.getHeaderNames();
 
-    Enumeration<String> list = request.getHeaderNames();
+      while(list.hasMoreElements()){
+        String name = list.nextElement();
+        String value = request.getHeader(name);
 
-    while(list.hasMoreElements()) {
-
-      String name = list.nextElement();
-      String value = request.getHeader(name);
-
-      out.print("<h3>");
-      out.print(name + " = " + value);
-      out.print("<h3>");
-
-    }
-
-  %>
+        out.print("<h3>");
+        out.print(name + " = " + value);
+        out.print("<h3>");
+      }
+%>
 
 </body>
 </html>

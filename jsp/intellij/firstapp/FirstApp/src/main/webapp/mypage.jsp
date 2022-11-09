@@ -13,17 +13,15 @@
 <body>
 
     <%
+        String loginId = (String) session.getAttribute("loginId");
 
-        String loginid = (String) session.getAttribute("loginid");
-
-        if(loginid == null) {
+        if(loginId == null){
             response.sendRedirect("login.html");
         }
-
     %>
 
-    <h1>로그인 후 보여지는 페이지 : <%= loginid %></h1>
-    <a href="logout.jsp">로그아웃</a>
+  <h1>로그인 후 보여지는 페이지 : <%= loginId%></h1>
+  <a href="logout.jsp">로그아웃</a>
 
 </body>
 </html>

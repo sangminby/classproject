@@ -14,19 +14,17 @@
 <body>
 
     param.sel : ${param.sel}
-    <hr>
 
+<hr>
     <select>
-
-        <option ${param.sel eq 'a' ? 'selected' : ''}>a-----------</option>
-        <option ${param.sel eq 'b' ? 'selected' : ''}>b-----------</option>
-        <option ${param.sel eq 'c' ? 'selected' : ''}>c-----------</option>
-
+        <option ${param.sel eq 'a' ? 'selected' : ''}>a---------</option>
+        <option ${param.sel eq 'b' ? 'selected' : ''}>b---------</option>
+        <option ${param.sel eq 'c' ? 'selected' : ''}>c---------</option>
     </select>
+
     <hr>
 
     <c:choose>
-
         <c:when test="${param.sel == 'a'}">
             <h3>a를 선택했습니다.</h3>
         </c:when>
@@ -39,8 +37,9 @@
         <c:otherwise>
             <h3>잘못된 데이터가 선택되었습니다.</h3>
         </c:otherwise>
-
+        
     </c:choose>
+
 
 </body>
 </html>

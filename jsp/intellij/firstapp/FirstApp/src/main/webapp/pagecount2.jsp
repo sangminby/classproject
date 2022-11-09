@@ -13,10 +13,11 @@
 <body>
 
   <%
-    String cntstr = (String) application.getAttribute("cnt");
-    int cnt = cntstr == null ? 0 : Integer.parseInt(cntstr);
+    String cntStr = (String) application.getAttribute("cnt");
+    int cnt = cntStr == null ? 0 : Integer.parseInt(cntStr);
 
-    out.print("페이지 방문 수 :" + cnt);
+
+    out.print("페이지 방문 수 : "+cnt);
 
   %>
 

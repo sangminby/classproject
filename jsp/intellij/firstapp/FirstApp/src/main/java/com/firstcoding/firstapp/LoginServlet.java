@@ -17,7 +17,6 @@ public class LoginServlet extends HttpServlet {
 
         if(userid.equals(pw)) {
             response.sendRedirect("mypage.jsp");
-            
         } else {
             response.sendRedirect("login.html");
         }
@@ -29,11 +28,12 @@ public class LoginServlet extends HttpServlet {
 //        out.write("<html>");
 //        out.write("<head><title>로그인 데이터</title></head>");
 //        out.write("<body>");
-//        out.write("<h1> userid : " + userid + "</h1>");
-//        out.write("<h1> pw : " + pw + "</h1>");
+//        out.write("<h1> userid : " + userid + "</h1>" );
+//        out.write("<h1> pw : " + pw + "</h1>" );
 //        out.write("</body>");
 //        out.write("</html>");
 
     }
+
 
 }

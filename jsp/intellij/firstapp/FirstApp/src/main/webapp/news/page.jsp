@@ -9,7 +9,6 @@
 <html>
 <head>
     <title>페이지 모듈화</title>
-
   <style>
 
     header, nav {
@@ -17,28 +16,25 @@
     }
 
   </style>
-
 </head>
 <body>
 
-  <%@ include file="top.jsp" %>
-  <%@ include file="navi.jsp" %>
+<%@ include file="top.jsp"%>
+<%@ include file="nav.jsp"%>
 
   <table>
-
     <tr>
-
       <td>
-        <%@ include file="news.jsp" %>
+        <%@ include file="news.jsp"%>
       </td>
-
       <td>
-        <%@ include file="shopping.jsp" %>
+        <%@ include file="shopping.jsp"%>
       </td>
-
     </tr>
-
   </table>
+
+
+
 
 </body>
 </html>
