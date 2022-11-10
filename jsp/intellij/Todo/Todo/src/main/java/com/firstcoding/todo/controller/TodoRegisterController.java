@@ -7,35 +7,22 @@ import java.io.IOException;
 
 @WebServlet(name = "TodoRegisterController", value = "/todo/register")
 public class TodoRegisterController extends HttpServlet {
-
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        System.out.println("TodoRegisterController : doGet()");
+        System.out.println("Register get()");
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/todo/register.jsp");
-        dispatcher.forward(req, resp);
+        // 데이터 처리
 
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/todo/register.jsp");
+        dispatcher.forward(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("Register post()");
 
-        req.setCharacterEncoding("utf-8");
-
-        String title = req.getParameter("title");
-        String date = req.getParameter("date");
-
-        String todo = title + date;
-
-        req.setAttribute("title", title);
-        req.setAttribute("date", date);
-        req.setAttribute("todo", todo);
-
-        resp.setContentType("text/html;charset=UTF-8");
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/todo/list.jsp");
-        dispatcher.forward(req, resp);
-
+        response.sendRedirect("/todo/list");
     }
 }
