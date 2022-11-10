@@ -5,11 +5,9 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.URLDecoder;
 
-@WebServlet(name = "SignUpServlet", value = "/signup")
-public class SignUpServlet extends HttpServlet {
-
+@WebServlet(name = "SignupServlet", value = "/SignupServlet")
+public class SignupServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
