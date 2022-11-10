@@ -10,6 +10,7 @@ public class InputController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         System.out.println("Calc InputController : doGet()");
 
         // controller(Servlet) -> Model (Service -> DAO)
@@ -27,4 +28,23 @@ public class InputController extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        // 사용자가 입력데이터 받기
+        String num1 = req.getParameter("num1");
+        String num2 = req.getParameter("num2");
+
+        // 핵심처리
+        int result = Integer.parseInt(num1) + Integer.parseInt(num2);
+
+        req.setAttribute("num1", num1);
+        req.setAttribute("num2", num2);
+        req.setAttribute("result", result);
+
+        // 결과 view 생성 처리
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/calc/result.jsp");
+        dispatcher.forward(req, resp);
+
+    }
 }

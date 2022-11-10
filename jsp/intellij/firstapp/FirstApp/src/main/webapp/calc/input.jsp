@@ -11,7 +11,7 @@
     <title>계산기</title>
 </head>
 <body>
-<form method="post">
+<form method="post" action="makeResult">
 
   <input type="number" name="num1" id="num1">
   <input type="number" name="num2" id="num2">
