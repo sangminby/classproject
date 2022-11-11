@@ -58,6 +58,13 @@
         
     </form>
 
+    <form action="/todo/remove" method="post">
+
+        <input type="hidden" name="tno" value="${param.tno}">
+        <input type="submit" value="Remove">
+
+    </form>
+
     <a href="/todo/list"> Todo List </a>
 
 </body>
