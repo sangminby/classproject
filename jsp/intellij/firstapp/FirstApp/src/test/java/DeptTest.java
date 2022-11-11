@@ -15,4 +15,5 @@ public class DeptTest {
 
         Assertions.assertEquals(60, dept.getDeptno(), "부서 번호 테스트 ");
     }
+
 }
