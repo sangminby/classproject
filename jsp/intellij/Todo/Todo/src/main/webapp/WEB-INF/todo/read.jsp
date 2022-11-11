@@ -49,7 +49,7 @@
 
   </table>
 
-  <a href="#"> Modify/Remove </a>   <a href="/todo/list"> Todo List </a>
+  <a href="/todo/modify?tno=${todo.tno}"> Modify/Remove </a>   <a href="/todo/list"> Todo List </a>
 
 </body>
 </html>

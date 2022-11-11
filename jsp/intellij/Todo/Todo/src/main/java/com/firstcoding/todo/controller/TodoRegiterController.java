@@ -24,7 +24,7 @@ public class TodoRegiterController extends HttpServlet {
         System.out.println("register post ...");
 
         // 한글처리 : post
-        request.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("UTF-8");
 
         String todo = request.getParameter("todo");
         String dueDate = request.getParameter("dueDate");
