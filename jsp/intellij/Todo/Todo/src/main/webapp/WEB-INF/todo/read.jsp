@@ -1,35 +1,55 @@
 <%--
   Created by IntelliJ IDEA.
   User: cheoho-hi
-  Date: 2022-11-10
-  Time: 오후 2:08
+  Date: 2022-11-11
+  Time: 오전 11:52
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-    <title>Todo Register</title>
-    <style>
-        body {
-            line-height: 250%;
-        }
-    </style>
+  <title>Title</title>
+  <style>
+
+  </style>
 </head>
 <body>
+
 <h1>Todo Read</h1>
 
+  <table>
 
-할일 <input type="text" name="todo" id="todo" value="저장되어 있는 할일" readonly><br>
-마감 <input type="date" name="date" id="date" value="2022-11-10" readonly> <br>
+    <tr>
 
-<a href="/todo/modify?tno=${param.tno}">modify</a>
-<form action="/todo/remove" method="post">
-    <input hidden name="tno" value="${param.tno}"> <input type="submit" value="삭제">
-    <%--    <a href="/todo/remove?tno=${param.tno}">remove</a>--%>
-</form>
-<a href="/todo/list"> Todo List</a>
+      <td>번호</td>
+      <td> <input type="text" name="tno" value="${todo.tno}" readonly> </td>
 
+    </tr>
+
+    <tr>
+
+      <td>할일</td>
+      <td> <input type="text" name="todo" value="${todo.todo}" readonly> </td>
+
+    </tr>
+
+    <tr>
+
+      <td>기한</td>
+      <td> <input type="date" name="dueDate" value="${todo.dueDate}" readonly> </td>
+
+    </tr>
+
+    <tr>
+
+      <td>상태</td>
+      <td> <input type="checkbox" name="finished" ${todo.finished ? 'checked' : ''}> </td>
+
+    </tr>
+
+  </table>
+
+  <a href="#"> Modify/Remove </a>   <a href="/todo/list"> Todo List </a>
 
 </body>
 </html>
