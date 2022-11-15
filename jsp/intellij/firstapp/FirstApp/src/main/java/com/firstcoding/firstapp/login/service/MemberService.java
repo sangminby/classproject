@@ -44,8 +44,15 @@ public class MemberService {
 
     public int updateUUID(int idx, String uuid) throws Exception {
 
-        Connection conn = ConnectionUtil.getInstance().getConnection();
+        @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
 
         return dao.updateUUIDByIdx(conn, uuid, idx);
+    }
+
+    public Member selectByUUID(String uuid) throws Exception {
+
+        @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
+
+        return dao.selectByUUID(conn, uuid);
     }
 }
