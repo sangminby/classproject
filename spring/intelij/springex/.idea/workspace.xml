@@ -5,8 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7a8952e-196d-4b72-a8a8-2255bf96f4f3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.gradle/7.4/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.gradle/7.4/checksums/md5-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.gradle/7.4/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.gradle/7.4/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.gradle/7.4/dependencies-accessors/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.gradle/7.4/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.gradle/7.4/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/build/resources/main/appCtx.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/build/resources/main/appCtx1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/build/resources/main/appCtx2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/build/resources/main/config1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/src/main/java/org/example/di/dao/DaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/src/main/java/org/example/di/main/MainForSpring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/src/main/java/org/example/di/main/MainForSpring2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/src/main/java/org/example/di/service/MemberRegisterService2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/src/main/resources/appCtx2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/src/main/resources/appCtx3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MemberManager/src/main/resources/config1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MemberManager/src/main/resources/appCtx.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MemberManager/src/main/resources/appCtx.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MemberManager/src/main/resources/appCtx1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MemberManager/src/main/resources/appCtx1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668564899508</updated>
-      <workItem from="1668564900965" duration="1211000" />
+      <workItem from="1668564900965" duration="1810000" />
     </task>
     <servers />
   </component>

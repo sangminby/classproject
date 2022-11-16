@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
@@ -8,16 +9,12 @@
 	<bean id="daoImpl" class="org.example.di.dao.DaoImpl"/>
 
 
-	<bean id="memberregSvc" class="org.example.di.service.MemberRegisterService2">
-<!--		MemberRegisterService2 에는 기본 생성자가 반드시 존재 -->
-		<property name="memberDao">
-<!--			<ref bean="memberDao"/>-->
-			<bean class="org.example.di.dao.MemberDao"/>
-		</property>
+	<bean id="memberregSvc" class="org.example.di.service.MemberRegisterService" scope="singleton">
+		<constructor-arg ref="memberDao"/>
 	</bean>
 
 
-	<bean id="memberPwSvc" class="org.example.di.service.ChangePasswordService">
+	<bean id="memberPwSvc" class="org.example.di.service.ChangePasswordService" scope="prototype">
 		<constructor-arg ref="memberDao" />
 	</bean>
 	
