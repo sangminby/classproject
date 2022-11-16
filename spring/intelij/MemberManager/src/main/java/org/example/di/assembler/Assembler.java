@@ -11,11 +11,11 @@ public class Assembler {
 	private MemberRegisterService regSvc;
 	private ChangePasswordService pwdSvc;
 
-//	public Assembler() {
-//		memberDao = new MemberDao();
-//		regSvc = new MemberRegisterService(memberDao);
-//		pwdSvc = new ChangePasswordService(memberDao);
-//	}
+	public Assembler() {
+		memberDao = new MemberDao();
+		regSvc = new MemberRegisterService(null);
+		pwdSvc = new ChangePasswordService();
+	}
 
 	public MemberDao getMemberDao() {
 		return memberDao;
