@@ -22,7 +22,7 @@ public class MainForSpring2 {
     public static void main(String[] args) throws IOException {
 
 //        ctx = new GenericXmlApplicationContext("classpath:appCtx.xml");
-        ctx = new GenericXmlApplicationContext("classpath:appCtx2.xml");
+        ctx = new GenericXmlApplicationContext("classpath:appCtx3.xml");
 
         MemberRegisterService mrs1 = ctx.getBean("memberregSvc", MemberRegisterService.class);
         MemberRegisterService mrs2 = ctx.getBean("memberregSvc", MemberRegisterService.class);
