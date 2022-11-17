@@ -16,4 +16,13 @@ public class SampleController {
         return mav;
     }
 
+    @RequestMapping("/sample2")
+    public String getStringPage() {
+        return "sample2";   // -> /WEB-INF/views/sample2.jsp
+    }
+
+    @RequestMapping("/sample3")
+    public void getVoidPage() {}
+
+
 }
