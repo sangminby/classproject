@@ -28,19 +28,22 @@
         <td>완료여부</td>
     </tr>
 
-    <c:forEach var="todo" items="${todoList}">
-    <tr>
-        <td>${todo.tno}</td>
-        <td><a href="/todo/read?tno=${todo.tno}">${todo.todo}</a></td>
-        <td>${todo.dueDate}</td>
-        <td>${todo.finished ? '완료' : '진행중'}</td>
-    </tr>
+    <c:forEach var="todo" items="${todoList}" varStatus="stat">
+        <tr>
+            <td>${todo.tno} / ${stat.count}</td>
+            <td><a href="/todo/read?tno=${todo.tno}">${todo.todo}</a></td>
+            <td>${todo.dueDate}</td>
+            <td>${todo.finished ? '완료' : '진행중'}</td>
+        </tr>
     </c:forEach>
+
 
 
 </table>
 
-    <a href="/todo/register">Todo 등록하기</a>
+
+<a href="/todo/register">Todo 등록하기</a>
+
 
 </body>
 </html>
