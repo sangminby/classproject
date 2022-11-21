@@ -19,7 +19,6 @@ public class HelloServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
-        out.println("<h1><a href=\"todo/list\">TO DO LIST</a></h1>");
         out.println("</body></html>");
     }
 

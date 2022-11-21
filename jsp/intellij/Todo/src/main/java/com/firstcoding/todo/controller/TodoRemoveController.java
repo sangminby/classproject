@@ -10,7 +10,7 @@ import java.io.IOException;
 
 @WebServlet(name = "TodoRmoveController", value = "/todo/remove")
 @Log4j2
-public class TodoRmoveController extends HttpServlet {
+public class TodoRemoveController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
