@@ -20,14 +20,18 @@ public class TodoDaoImpl implements TodoDao {
         @Cleanup PreparedStatement pstmt = conn.prepareStatement("Select * from tbl_todo");
         @Cleanup ResultSet rs = pstmt.executeQuery();
 
-        // 결과 row 체크 후 반복 여부 진행
         if (rs.next()){
+
             result = new ArrayList<>();
+
             do {
+
                 result.add(toTodoDto(rs));
+
             } while (rs.next());
+
         } else {
-            // 비어 있는 리스트 생성 : null 값으로 반화할 경우 상황에 따라 null 비교하는 구문이 필요!!
+
             result = Collections.emptyList();;
         }
 
@@ -42,17 +46,7 @@ public class TodoDaoImpl implements TodoDao {
                 rs.getDate(3).toLocalDate(),
                 rs.getBoolean(4));
 
-        /*
-        TodoDTO dto = TodoDTO.builder()
-            .tno(rs.getLong(1))
-            .todo(rs.getString(2))
-            .dueDate(rs.getDate(3).toLocalDate())
-            .finished(rs.getBoolean(4))
-            .build();
-        */
-
         return dto;
-
     }
 
     @Override

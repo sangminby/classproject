@@ -10,6 +10,6 @@
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 <br>
-<a href="todo/list">To do List</a>
+<a href="testtodo/list">To do List</a>
 </body>
 </html>

@@ -32,7 +32,7 @@
     <tr>
       <td></td>
       <td><input type="reset">
-          <input type="submit" value="register">
+          <input type="submit" value="저장">
       </td>
     </tr>
   </table>
