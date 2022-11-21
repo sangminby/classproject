@@ -38,4 +38,17 @@
 
     </bean>
 
+
+    <!-- 회원 로그인 여부 체크 interceptor 등록 -->
+    <mvc:interceptors>
+
+        <mvc:interceptor>
+
+            <mvc:mapping path="/mypage/**"/>
+            <bean class="com.firstcodingmvc.springmvc.Interceptor.AuthCheckInterceptor"/>
+
+        </mvc:interceptor>
+
+    </mvc:interceptors>
+
 </beans>
