@@ -5,6 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd685d1b-74d4-4216-833b-950189f3e043" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcodingmvc/springmvc/controller/CookieController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcodingmvc/springmvc/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcodingmvc/springmvc/controller/PathVarController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcodingmvc/springmvc/domain/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcodingmvc/springmvc/domain/OrderCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/firstcodingmvc/springmvc/domain/OrderItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/cookie/make.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/cookie/view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/info.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/order/order.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/order/orderform.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,19 +59,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/cheoho-hi/Documents/github/classproject/spring/intelij/TodoSpring/src/main/java/com/todo/todospring/dao",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cheoho-hi/Documents/github/classproject/spring/intelij/TodoSpring/src/main/java/com/todo/todospring/dao&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;7b6636d49cb0a72be55c8ce56779deab&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\cheoho-hi\Documents\github\classproject\spring\intelij\TodoSpring\src\main\java\com\todo\todospring\dao" />
@@ -176,7 +190,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668732145594</updated>
-      <workItem from="1668732146941" duration="12207000" />
+      <workItem from="1668732146941" duration="12427000" />
+      <workItem from="1668990651574" duration="357000" />
+      <workItem from="1668991469493" duration="170000" />
+      <workItem from="1669000601571" duration="24000" />
     </task>
     <servers />
   </component>
