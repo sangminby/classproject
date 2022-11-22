@@ -1,28 +1,22 @@
 package com.firstcoding.todo.controller;
 
 import com.firstcoding.todo.service.TestService;
-import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
-import java.io.IOException;
+@Controller
+public class TestReadController {
 
-@WebServlet(name = "TestReadController", value = "/testtodo/read")
-@Log4j2
-public class TestReadController extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @Autowired
+    private TestService testService;
 
-        log.info("test read get...");
+    @GetMapping("/testtodo/read")
+    public void readTodo(Model model, @RequestParam("tno") int tno) {
 
-        String tno = request.getParameter("tno");
-
-        request.setAttribute("todo", TestService.getInstance().getTodo(Integer.parseInt(tno)));
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/testtodo/read.jsp");
-        dispatcher.forward(request, response);
+        model.addAttribute("todo", testService.getTodo(tno));
 
     }
-
 }

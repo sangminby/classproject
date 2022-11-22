@@ -1,27 +1,24 @@
 package com.firstcoding.todo.controller;
 
 import com.firstcoding.todo.service.TestService;
-import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
-import java.io.IOException;
+@Controller
+public class TestRemoveController {
 
-@WebServlet(name = "TestRemoveController", value = "/testtodo/remove")
-@Log4j2
-public class TestRemoveController extends HttpServlet {
+    @Autowired
+    private TestService testService;
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        log.info("test todo remove ...");
+    @PostMapping("/testtodo/remove")
+    public String remove(@RequestParam("tno") int tno) {
 
-        String tno = request.getParameter("tno");
+        testService.deleteBytno(tno);
 
-        TestService.getInstance().deleteBytno(Long.parseLong(tno));
-
-        response.sendRedirect("/testtodo/list");
-
+        return "redirect:/testtodo/list";
     }
+
 }

@@ -1,28 +1,27 @@
 package com.firstcoding.todo.controller;
 
 import com.firstcoding.todo.service.TestService;
-import lombok.extern.log4j.Log4j2;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
-import java.io.IOException;
+@Controller
+public class TestListController {
 
-@WebServlet(name = "TestListController", value = "/testtodo/list")
-@Log4j2
-public class TestListController extends HttpServlet {
+    private final TestService testService;
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        log.info("test list...");
+    public TestListController(TestService testService) {
+        this.testService = testService;
+    }
 
-        request.setAttribute("title", "Test List");
-        request.setAttribute("testList", TestService.getInstance().getTestList());
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/testtodo/list.jsp");
-        dispatcher.forward(request, response);
+    @RequestMapping("/testtodo/list")
+    public String getList(Model model) {
 
+        model.addAttribute("testlist", testService.getTodoList());
+
+        return "testtodo/list";
     }
 
 }

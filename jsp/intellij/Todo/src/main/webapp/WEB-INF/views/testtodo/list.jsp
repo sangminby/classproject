@@ -26,7 +26,7 @@
 
   <h1>${title}</h1>
 
-  <table border="1">
+  <table>
 
     <tr>
 
@@ -37,7 +37,7 @@
 
     </tr>
 
-    <c:forEach var="todo" items="${testList}">
+    <c:forEach var="todo" items="${testlist}" varStatus="stat">
 
       <tr>
 

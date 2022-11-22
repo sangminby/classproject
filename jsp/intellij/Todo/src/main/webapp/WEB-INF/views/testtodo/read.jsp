@@ -57,6 +57,6 @@
 
   </table>
 
-  <a href="/testtodo/modify?tno=${param.tno}">수정 & 삭제 </a>   <a href="/testtodo/list">Todo List</a>
+  <a href="/testtodo/modify?tno=${param.tno}">수정 & 삭제 </a> <a href="/testtodo/list">Todo List</a>
 </body>
 </html>

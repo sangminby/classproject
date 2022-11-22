@@ -12,7 +12,7 @@ public interface TodoDao {
 
     TodoDTO selectByTno(Connection conn, long tno) throws SQLException;
 
-    int insertToDo(Connection conn, TodoDTO dto) throws SQLException;
+    int registerToDo(Connection conn, TodoDTO dto) throws SQLException;
 
     int updateTodo(Connection conn, TodoDTO dto) throws SQLException;
 

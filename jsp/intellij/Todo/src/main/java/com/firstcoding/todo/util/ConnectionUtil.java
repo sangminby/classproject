@@ -9,7 +9,9 @@ public class ConnectionUtil {
 
     private HikariDataSource hikariDataSource;
 
+
     private static ConnectionUtil instance = new ConnectionUtil();
+
 
     private ConnectionUtil() {
 
@@ -31,9 +33,12 @@ public class ConnectionUtil {
 
     }
 
+
     public static ConnectionUtil getInstance() {return instance;}
 
+
     public Connection getConnection() throws Exception {
+
         return hikariDataSource.getConnection();
     }
 

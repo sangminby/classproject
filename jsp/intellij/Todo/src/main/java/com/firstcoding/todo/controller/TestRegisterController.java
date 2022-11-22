@@ -1,46 +1,41 @@
 package com.firstcoding.todo.controller;
 
-import com.firstcoding.todo.domain.TodoDTO;
 import com.firstcoding.todo.service.TestService;
-import lombok.extern.log4j.Log4j2;
+import com.firstcoding.todo.domain.TodoDTO;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
-import java.io.IOException;
 import java.time.LocalDate;
 
-@WebServlet(name = "TestRegisterController", value = "/testtodo/register")
-@Log4j2
-public class TestRegisterController extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+@Controller
+@RequestMapping("/testtodo/register")
+public class TestRegisterController {
 
-        log.info("test register get ...");
-        request.getRequestDispatcher("/WEB-INF/testtodo/register.jsp").forward(request, response);
+    private final TestService testService;
 
+    public TestRegisterController(TestService testService) {
+        this.testService = testService;
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @GetMapping
+    public String getRegisterForm() {
+        return "testtodo/register";
+    }
 
-        log.info("test register post ...");
-
-        request.setCharacterEncoding("utf-8");
-        String todo = request.getParameter("todo");
-        String dueDate = request.getParameter("dueDate");
+    @PostMapping
+    public String register(@RequestParam("todo") String todo, @RequestParam("dueDate") String dueDate) {
 
         TodoDTO todoDTO = TodoDTO.builder()
-                .todo(todo)
-                .dueDate(LocalDate.parse(dueDate))
-                .build();
+                          .todo(todo)
+                          .dueDate(LocalDate.parse(dueDate))
+                          .build();
 
-        log.info(todoDTO);
+        testService.registerTodo(todoDTO);
 
-        TestService.getInstance().insertTodo(todoDTO);
-
-        response.sendRedirect("/testtodo/list");
-
+        return "redirect:/testtodo/list";
     }
 
 }

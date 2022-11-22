@@ -25,7 +25,7 @@
 
   <h1>Todo Modify</h1>
 
-  <form method="post">
+  <form action="/testtodo/modify" method="post">
 
     <table>
 
@@ -60,8 +60,10 @@
       <tr>
 
         <td></td>
-        <td><input type="reset">
-            <input type="submit" value="수정">
+        <td>
+
+          <input type="reset">
+          <input type="submit" value="수정">
 
         </td>
 

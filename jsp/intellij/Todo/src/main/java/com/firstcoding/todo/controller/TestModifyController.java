@@ -1,54 +1,46 @@
 package com.firstcoding.todo.controller;
 
-import com.firstcoding.todo.domain.TodoDTO;
 import com.firstcoding.todo.service.TestService;
-import lombok.extern.log4j.Log4j2;
+import com.firstcoding.todo.domain.TodoDTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
-import java.io.IOException;
 import java.time.LocalDate;
 
-@WebServlet(name = "TestModifyController", value = "/testtodo/modify")
-@Log4j2
-public class TestModifyController extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+@Controller
+@RequestMapping("/testtodo/modify")
+public class TestModifyController {
 
-        log.info("test modify get ...");
+    @Autowired
+    private TestService testService;
 
-        String tno = request.getParameter("tno");
 
-        request.setAttribute("todo", TestService.getInstance().getTodo(Long.parseLong(tno)));
+    @GetMapping
+    public String getModifyForm(Model model, @RequestParam("tno") int tno) {
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/testtodo/modify.jsp");
-        dispatcher.forward(request, response);
+        model.addAttribute("todo", testService.getTodo(tno));
+
+        return "/testtodo/modify";
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        log.info("test modify post ...");
+    @PostMapping
+    public String ModiftForm(@RequestParam("tno") int tno,
+                             @RequestParam("todo") String todo,
+                             @RequestParam("dueDate") String dueDate,
+                             @RequestParam(value = "finished", required = false) String finished
+    ) {
 
-        request.setCharacterEncoding("utf-8");
-        String tno = request.getParameter("tno");
-        String todo = request.getParameter("todo");
-        String dueDate = request.getParameter("dueDate");
-        String finished = request.getParameter("finished");
+        TodoDTO todoDTO = new TodoDTO(tno, todo, LocalDate.parse(dueDate), finished == null ? false : true);
 
-        TodoDTO todoDTO = TodoDTO.builder()
-                .tno(Long.parseLong(tno))
-                .todo(todo)
-                .dueDate(LocalDate.parse(dueDate))
-                .finished(finished == null ? false : true)
-                .build();
+        testService.modify(todoDTO);
 
-        log.info(todoDTO);
-
-        TestService.getInstance().modify(todoDTO);
-
-        response.sendRedirect("/testtodo/list");
-
+        return "redirect:/testtodo/list";
     }
+
 }
