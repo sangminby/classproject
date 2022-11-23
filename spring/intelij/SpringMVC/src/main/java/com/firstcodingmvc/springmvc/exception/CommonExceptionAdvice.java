@@ -59,5 +59,5 @@ public class CommonExceptionAdvice {
 
         return "custom404";
     }
-    
+
 }
