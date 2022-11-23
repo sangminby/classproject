@@ -52,7 +52,7 @@
 
   </table>
 
-  <a href="/testtodo/register">Todo 등록하기</a>
+  <a href="/testtodo/register">Todo 등록하기</a> <a href="/index">돌아가기</a>
 
 </body>
 </html>
