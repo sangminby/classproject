@@ -30,14 +30,16 @@ public class TodoModifyController {
     }
 
     @PostMapping
-    public String ModiftForm(@RequestParam("tno") int tno,
-                             @RequestParam("todo") String todo,
-                             @RequestParam("dueDate") String dueDate,
-                             @RequestParam(value = "finished", required = false) String finished
+    public String ModiftForm(
+//                             @RequestParam("tno") int tno,
+//                             @RequestParam("todo") String todo,
+//                             @RequestParam("dueDate") String dueDate,
+//                             String finished
+                            TodoDTO todoDTO
     ) {
 
-        TodoDTO todoDTO = new TodoDTO(tno, todo, LocalDate.parse(dueDate), finished == null ? false : true);
-        log.info("todoDTO -> " + todoDTO);
+//        TodoDTO todoDTO = new TodoDTO(tno, todo, LocalDate.parse(dueDate), finished == null ? false : true);
+        log.info(todoDTO);
 
         todoService.modify(todoDTO);
 

@@ -12,37 +12,23 @@ import javax.servlet.http.HttpSession;
 public class AuthCheckInterceptor implements HandlerInterceptor {
 
     @Override
-    public boolean preHandle(
-                             HttpServletRequest request,
-                             HttpServletResponse response,
-                             Object handler
-    ) throws Exception {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        log.info("회원 로그인 여부 체크...");
+        log.info(" >>>>>>> 회원 로그인 여부 체크...");
 
-
-        // 세션 확인
+        // 회원 로그인 상태 체크
         HttpSession session = request.getSession(false);
 
-
-        // 정상 처리
-        // return true;
-        // 세션에 로그인 정보가 있으면 정상 처리 return true
+        // 회원이 로그인 상태이다!!!
         if(session != null && session.getAttribute("loginInfo") != null) {
-
-            log.info("로그인 상태 !!! ...");
-
+            // 로그인 상태!!
+            log.info("로그인 상태!!!");
             return true;
         }
 
-
-        // 정상 처리가 되지 않도록 처리
-        // return false;
-        // 세션에 로그인 정보가 없으면 redirect("/login") return false
-        log.info("비 로그인 상태 !!! ...");
+        log.info("비 로그인 상태!!!");
         response.sendRedirect("/login");
         return false;
-
     }
 
 

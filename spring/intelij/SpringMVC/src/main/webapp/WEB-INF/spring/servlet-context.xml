@@ -51,4 +51,22 @@
 
     </mvc:interceptors>
 
+
+    <!-- Formatter 설정 -->
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+
+        <property name="formatters">
+
+            <set>
+
+                <bean class="com.firstcodingmvc.springmvc.formatter.LocalDateFormatter"/>
+
+            </set>
+
+        </property>
+
+    </bean>
+
+    <mvc:annotation-driven conversion-service="conversionService"/>
+
 </beans>
