@@ -36,14 +36,37 @@
       <tr>
 
         <td>직책</td>
-        <td><input type="text" name="job" value="${emp.job}"></td>
+        <td>
+
+          <select name="job">
+
+            <option value="CLERK">CLERK</option>
+            <option value="SALESMAN">SALESMAN</option>
+            <option value="MANAGER">MANAGER</option>
+            <option value="ANALYST">ANALYST</option>
+
+          </select>
+
+        </td>
 
       </tr>
 
       <tr>
 
         <td>관리번호</td>
-        <td><input type="number" name="mgr" value="${emp.mgr}"></td>
+        <td>
+
+          <select name="mgr">
+
+            <option value="7566">7566</option>
+            <option value="7698">7698</option>
+            <option value="7782">7782</option>
+            <option value="7788">7788</option>
+            <option value="7902">7902</option>
+
+          </select>
+
+        </td>
 
       </tr>
 
@@ -71,7 +94,17 @@
       <tr>
 
         <td>부서번호</td>
-        <td><input type="number" name="deptno" value="${emp.deptno}"></td>
+        <td>
+
+          <select name="deptno">
+
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+
+          </select>
+
+        </td>
 
       </tr>
 
