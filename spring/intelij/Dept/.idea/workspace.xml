@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="062666a9-63bf-4768-b8ea-b37d6318db77" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Emp/src/main/java/com/app/manager/testcontroller/EmpDeleteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Emp/src/main/java/com/app/manager/testcontroller/EmpListController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Emp/src/main/java/com/app/manager/testcontroller/EmpModifyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Emp/src/main/java/com/app/manager/testcontroller/EmpRegController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Emp/src/main/java/com/app/manager/testmapper/EmpMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Emp/src/main/java/com/app/manager/testservice/EmpService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Emp/src/main/webapp/WEB-INF/views/emp/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Emp/src/main/webapp/WEB-INF/views/emp/modify.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Emp/src/main/webapp/WEB-INF/views/emp/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Emp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Emp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Emp/src/main/java/com/app/manager/testdomain/EmpDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Emp/src/main/java/com/app/manager/testdomain/EmpDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Emp/src/main/resources/testmappers/EmpMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Emp/src/main/resources/testmappers/EmpMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Emp/src/main/webapp/WEB-INF/views/emp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Emp/src/main/webapp/WEB-INF/views/emp/register.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +191,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669254007754</updated>
-      <workItem from="1669254009083" duration="20488000" />
+      <workItem from="1669254009083" duration="21038000" />
     </task>
     <servers />
   </component>
