@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd685d1b-74d4-4216-833b-950189f3e043" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Dept/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/HelloServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/todo/todospring/interceptor/AuthCheckInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/todo/todospring/interceptor/AuthCheckInterceptor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +202,9 @@
       <workItem from="1669000601571" duration="24000" />
       <workItem from="1669020265475" duration="14000" />
       <workItem from="1669077479195" duration="22052000" />
-      <workItem from="1669166073864" duration="16053000" />
+      <workItem from="1669166073864" duration="16260000" />
+      <workItem from="1669193466156" duration="264000" />
+      <workItem from="1669249419207" duration="1634000" />
     </task>
     <servers />
   </component>
