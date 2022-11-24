@@ -1,6 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-</beans>
+<mapper namespace="com.app.manager.testmapper.EmpMapper">
+
+    <select id="selectAll" resultType="com.app.manager.testdomain.EmpDTO">
+
+        select * from emp
+
+    </select>
+
+    <select id="selectByempno" resultType="com.app.manager.testdomain.EmpDTO">
+
+        select * from emp where empno=#{empno}
+
+    </select>
+
+    <insert id="insertEmp" parameterType="com.app.manager.testdomain.EmpDTO">
+
+        insert into emp values (#{empno}, #{ename}, #{job}, #{mgr}, #{hiredate}, #{sal}, #{comm}, #{deptno})
+
+    </insert>
+
+    <update id="updateEmp" parameterType="com.app.manager.testdomain.EmpDTO">
+
+        update emp set ename=#{ename}, job=#{job}, mgr=#{mgr}, hiredate=#{hiredate}, sal=#{sal}, comm=#{comm}, deptno=#{deptno} where empno=#{empno}
+
+    </update>
+
+    <delete id="deleteByempno">
+
+        delete from emp where empno=#{empno}
+
+    </delete>
+
+</mapper>
