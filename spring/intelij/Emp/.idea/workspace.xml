@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab075a0-1006-4091-9e50-a2c96013c88d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/mapper/DeptMapper2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Dept/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/DeptListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/DeptListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/modify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/modify.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/register.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +61,8 @@
     "last_opened_file_path": "C:/Users/cheoho-hi/Documents/github/classproject/spring/intelij/Emp/src/main/webapp/WEB-INF/views/emp",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "spring.configuration.checksum": "18b1b63f8c34707921ec5027ed5699f3"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -168,7 +171,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669271191094</updated>
-      <workItem from="1669271192393" duration="9258000" />
+      <workItem from="1669271192393" duration="9325000" />
+      <workItem from="1669336239824" duration="1268000" />
     </task>
     <servers />
   </component>
