@@ -16,7 +16,6 @@ public interface DeptMapper {
     // 검색 타입과 키워드를 받아서 검색 결과를 반환
     List<DeptDTO> selectByOption(DeptSearchOption searchOption);
 
-
     List<DeptDTO> selectByDeptnos(List<Integer> deptnos);
 
 
