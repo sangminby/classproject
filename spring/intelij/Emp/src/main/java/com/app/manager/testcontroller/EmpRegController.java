@@ -1,6 +1,7 @@
 package com.app.manager.testcontroller;
 
 import com.app.manager.testdomain.EmpDTO;
+import com.app.manager.testservice.EmpMybatisService;
 import com.app.manager.testservice.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,10 @@ public class EmpRegController {
     private EmpService empService;
 
 
+    @Autowired
+    private EmpMybatisService empMybatisService;
+
+
     @GetMapping
     public void getEmpRegister() {
 
@@ -25,7 +30,7 @@ public class EmpRegController {
     @PostMapping
     public String postEmpRegister(EmpDTO empDTO) {
 
-        empService.insertEmp(empDTO);
+        empMybatisService.insertEmp(empDTO);
 
         return "redirect:/emp/list";
     }

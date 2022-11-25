@@ -9,5 +9,7 @@
 </h1>
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
+<br>
+<a href="/emp/list">사원 리스트</a>
 </body>
 </html>

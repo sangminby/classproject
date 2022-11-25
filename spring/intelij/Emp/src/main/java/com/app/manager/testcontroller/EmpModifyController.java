@@ -1,6 +1,7 @@
 package com.app.manager.testcontroller;
 
 import com.app.manager.testdomain.EmpDTO;
+import com.app.manager.testservice.EmpMybatisService;
 import com.app.manager.testservice.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,10 +19,14 @@ public class EmpModifyController {
     private EmpService empService;
 
 
+    @Autowired
+    private EmpMybatisService empMybatisService;
+
+
     @GetMapping
     public void getEmpModify(@RequestParam("emp") int empno, Model model) {
 
-        model.addAttribute("emp", empService.selectByempno(empno));
+        model.addAttribute("emp", empMybatisService.selectByempno(empno));
 
     }
 
@@ -29,7 +34,7 @@ public class EmpModifyController {
     @PostMapping
     public String postEmpModify(EmpDTO empDTO) {
 
-        empService.updateEmp(empDTO);
+        empMybatisService.updateEmp(empDTO);
 
         return "redirect:/emp/list";
     }

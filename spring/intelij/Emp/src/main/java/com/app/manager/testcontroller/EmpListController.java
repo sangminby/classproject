@@ -1,5 +1,7 @@
 package com.app.manager.testcontroller;
 
+import com.app.manager.testmapper.EmpMyBatisMapper;
+import com.app.manager.testservice.EmpMybatisService;
 import com.app.manager.testservice.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,10 +15,14 @@ public class EmpListController {
     private EmpService empService;
 
 
+    @Autowired
+    private EmpMybatisService empMybatisService;
+
+
     @RequestMapping("/emp/list")
     public void getEmpList(Model model) {
 
-        model.addAttribute("empList", empService.selectAll());
+        model.addAttribute("empList", empMybatisService.selectAll());
 
     }
 
