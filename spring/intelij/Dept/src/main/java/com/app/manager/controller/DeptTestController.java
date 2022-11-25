@@ -17,11 +17,13 @@ public class DeptTestController {
 
 
     @RequestMapping("/dept/list")
-    public void getDeptList(DeptSearchOption searchOption, Model model) {
+    public String getDeptList(DeptSearchOption searchOption, Model model) {
 
         log.info("dept list...");
         model.addAttribute("deptList", deptListService.getSearchList(searchOption));
 
+
+        return "/dept/lists";
     }
 
 }

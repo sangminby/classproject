@@ -50,7 +50,7 @@
 
                 <if test="list != null and list.size != 0">
 
-                    deptno I
+                    deptno IN
                     <foreach collection="list" item="item" index="index" separator="," open="(" close=")">
 
                         #{item}
