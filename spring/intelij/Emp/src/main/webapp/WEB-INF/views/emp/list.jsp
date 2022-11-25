@@ -53,7 +53,28 @@
 
   </table>
 
-  <a href="/emp/register">부서 등록</a>
+  <a href="/emp/register">사원 등록</a> <a href="/emp/list">사원 리스트</a>
+
+  <div style="margin-top: 10px">
+
+    <form>
+
+      검색
+      <select name="searchType">
+
+        <option value="ename">사원이름</option>
+        <option value="job">직책</option>
+        <option value="mgr">관리번호</option>
+        <option value="deptno">부서번호</option>
+
+      </select>
+
+      <input type="text" name="keyword">
+      <input type="submit" value="검색">
+
+    </form>
+
+  </div>
 
   <script>
 
@@ -62,7 +83,6 @@
       if(confirm("삭제하시겠습니까?")) {
         location.href = '/emp/delete?empno='+emp;
       }
-
     }
 
   </script>

@@ -10,24 +10,66 @@
 
     </select>
 
+    
+    <select id="searchOption" parameterType="com.app.manager.testdomain.EmpSearchOption" resultType="com.app.manager.testdomain.EmpDTO">
+
+        select * from emp
+        <where>
+
+            <if test="searchType != null and keyword != null">
+
+                <if test="searchType == 'ename'">
+
+                    ename like concat('%', #{keyword}, '%')
+
+                </if>
+
+                <if test="searchType == 'job'">
+
+                    job like concat('%', #{keyword}, '%')
+
+                </if>
+
+                <if test="searchType == 'mgr'">
+
+                    mgr like concat('%', #{keyword}, '%')
+
+                </if>
+
+                <if test="searchType == 'deptno'">
+
+                    deptno like concat('%', #{keyword}, '%')
+
+                </if>
+
+            </if>
+
+        </where>
+
+    </select>
+    
+
     <select id="selectByempno" resultType="com.app.manager.testdomain.EmpDTO">
 
         select * from emp where empno=#{empno}
 
     </select>
 
+    
     <insert id="insertEmp" parameterType="com.app.manager.testdomain.EmpDTO">
 
         insert into emp values (#{empno}, #{ename}, #{job}, #{mgr}, #{hiredate}, #{sal}, #{comm}, #{deptno})
 
     </insert>
 
+    
     <update id="updateEmp" parameterType="com.app.manager.testdomain.EmpDTO">
 
         update emp set ename=#{ename}, job=#{job}, mgr=#{mgr}, hiredate=#{hiredate}, sal=#{sal}, comm=#{comm}, deptno=#{deptno} where empno=#{empno}
 
     </update>
 
+    
     <delete id="deleteByempno">
 
         delete from emp where empno=#{empno}

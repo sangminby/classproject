@@ -1,5 +1,6 @@
 package com.app.manager.testcontroller;
 
+import com.app.manager.testdomain.EmpSearchOption;
 import com.app.manager.testmapper.EmpMyBatisMapper;
 import com.app.manager.testservice.EmpMybatisService;
 import com.app.manager.testservice.EmpService;
@@ -20,10 +21,11 @@ public class EmpListController {
 
 
     @RequestMapping("/emp/list")
-    public void getEmpList(Model model) {
+    public String getEmpList(EmpSearchOption empsearchOption, Model model) {
 
-        model.addAttribute("empList", empMybatisService.selectAll());
+        model.addAttribute("empList", empService.getSearchList(empsearchOption));
 
+        return "/emp/lists";
     }
 
 }

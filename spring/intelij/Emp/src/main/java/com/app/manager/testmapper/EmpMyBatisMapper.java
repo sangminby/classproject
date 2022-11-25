@@ -1,6 +1,7 @@
 package com.app.manager.testmapper;
 
 import com.app.manager.testdomain.EmpDTO;
+import com.app.manager.testdomain.EmpSearchOption;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

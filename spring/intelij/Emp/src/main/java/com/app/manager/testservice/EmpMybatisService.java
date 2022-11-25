@@ -1,6 +1,7 @@
 package com.app.manager.testservice;
 
 import com.app.manager.testdomain.EmpDTO;
+import com.app.manager.testdomain.EmpSearchOption;
 import com.app.manager.testmapper.EmpMapper;
 import com.app.manager.testmapper.EmpMyBatisMapper;
 import org.springframework.beans.factory.annotation.Autowired;

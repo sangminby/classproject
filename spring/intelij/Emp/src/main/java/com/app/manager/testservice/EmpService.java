@@ -1,7 +1,9 @@
 package com.app.manager.testservice;
 
 import com.app.manager.testdomain.EmpDTO;
+import com.app.manager.testdomain.EmpSearchOption;
 import com.app.manager.testmapper.EmpMapper;
+import com.app.manager.testmapper.EmpMyBatisMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,11 @@ public class EmpService {
     public List<EmpDTO> selectAll() {
 
         return empMapper.selectAll();
+    }
+
+    public List<EmpDTO> getSearchList(EmpSearchOption empSearchOption) {
+
+        return empMapper.searchOption(empSearchOption);
     }
 
 
