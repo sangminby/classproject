@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab075a0-1006-4091-9e50-a2c96013c88d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/testdomain/EmpSearchOption.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Dept/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/mapper/DeptMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/mapper/DeptMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/manager/testcontroller/EmpListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/testcontroller/EmpListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/manager/testmapper/EmpMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/testmapper/EmpMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/manager/testmapper/EmpMyBatisMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/testmapper/EmpMyBatisMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/manager/testservice/EmpMybatisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/testservice/EmpMybatisService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/manager/testservice/EmpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/testservice/EmpService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/testmappers/EmpMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testmappers/EmpMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/lists.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/lists.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,19 +48,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/cheoho-hi/Documents/github/classproject/spring/intelij/Emp/src/main/webapp",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "spring.configuration.checksum": "18b1b63f8c34707921ec5027ed5699f3"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cheoho-hi/Documents/github/classproject/spring/intelij/Emp/src/main/webapp&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;18b1b63f8c34707921ec5027ed5699f3&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\cheoho-hi\Documents\github\classproject\spring\intelij\Emp\src\main\webapp" />
@@ -185,7 +174,8 @@
       <updated>1669271191094</updated>
       <workItem from="1669271192393" duration="9325000" />
       <workItem from="1669336239824" duration="1268000" />
-      <workItem from="1669356669592" duration="9725000" />
+      <workItem from="1669356669592" duration="9942000" />
+      <workItem from="1669595742882" duration="182000" />
     </task>
     <servers />
   </component>
