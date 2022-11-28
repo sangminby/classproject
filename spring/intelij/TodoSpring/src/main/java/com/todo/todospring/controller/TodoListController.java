@@ -1,6 +1,6 @@
 package com.todo.todospring.controller;
 
-import com.todo.todospring.Service.TodoService;
+import com.todo.todospring.service.TodoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

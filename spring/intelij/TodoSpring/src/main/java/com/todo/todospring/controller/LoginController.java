@@ -1,8 +1,6 @@
 package com.todo.todospring.controller;
 
-import com.todo.todospring.Service.LoginService;
-import com.todo.todospring.dao.MemberDao;
-import com.todo.todospring.domain.LoginInfo;
+import com.todo.todospring.service.LoginService;
 import com.todo.todospring.domain.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

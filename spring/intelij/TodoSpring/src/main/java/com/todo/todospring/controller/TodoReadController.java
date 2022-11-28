@@ -1,6 +1,6 @@
 package com.todo.todospring.controller;
 
-import com.todo.todospring.Service.TodoService;
+import com.todo.todospring.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

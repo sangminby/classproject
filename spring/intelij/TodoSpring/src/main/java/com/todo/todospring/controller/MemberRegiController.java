@@ -1,6 +1,6 @@
 package com.todo.todospring.controller;
 
-import com.todo.todospring.Service.MemberRegService;
+import com.todo.todospring.service.MemberRegService;
 import com.todo.todospring.domain.MemberRegRequest;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
