@@ -4,11 +4,13 @@ import com.firstcoding.todo.domain.MemberRegiRequestDTO;
 import com.firstcoding.todo.service.TestMemberRegiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/testmember/register")
@@ -26,7 +28,16 @@ public class TestMemberRegiController {
 
 
     @PostMapping
-    public String regi(MemberRegiRequestDTO memberRegiRequestDTO, HttpServletRequest httpServletRequest) throws Exception {
+    public String regi(
+                        @Valid MemberRegiRequestDTO memberRegiRequestDTO,
+                        BindingResult bindingResult,
+                        HttpServletRequest httpServletRequest
+    ) throws Exception {
+
+        if(bindingResult.hasErrors()) {
+
+            return "redirect:/testmember/register";
+        }
 
         testMemberRegiService.memberRegi(memberRegiRequestDTO, httpServletRequest);
 

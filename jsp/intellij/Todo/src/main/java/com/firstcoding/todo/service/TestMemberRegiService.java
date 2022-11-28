@@ -1,23 +1,26 @@
 package com.firstcoding.todo.service;
 
-import com.firstcoding.todo.dao.MemberDao;
+import com.firstcoding.todo.domain.TodoDTO;
+import com.firstcoding.todo.mapper.MemberMapper;
 import com.firstcoding.todo.domain.MemberDTO;
 import com.firstcoding.todo.domain.MemberRegiRequestDTO;
-import com.firstcoding.todo.util.ConnectionUtil;
-import lombok.Cleanup;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.BindingResult;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
-import java.sql.Connection;
+import java.sql.SQLException;
 
 @Service
 public class TestMemberRegiService {
 
-    @Autowired
-    private MemberDao memberDao;
+    @Autowired(required = false)
+    private MemberMapper memberMapper;
 
 
     public int memberRegi(MemberRegiRequestDTO memberRegiRequestDTO, HttpServletRequest httpServletRequest) throws Exception {
@@ -50,9 +53,7 @@ public class TestMemberRegiService {
             memberDTO.setUphoto(fileName);
         }
 
-        @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
-
-        return memberDao.registerMember(conn, memberDTO);
+        return memberMapper.registerMember(memberDTO);
     }
 
 }

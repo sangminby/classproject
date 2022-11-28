@@ -1,14 +1,13 @@
 package com.firstcoding.todo.service;
 
-import com.firstcoding.todo.dao.TodoDao;
+import com.firstcoding.todo.mapper.TodoMapper;
 import com.firstcoding.todo.domain.TodoDTO;
-import com.firstcoding.todo.util.ConnectionUtil;
-import lombok.Cleanup;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.Connection;
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 
@@ -16,8 +15,8 @@ import java.util.List;
 @Service
 public class TestService {
 
-    @Autowired
-    private TodoDao dao;
+    @Autowired(required = false)
+    private TodoMapper todoMapper;
 
 
     public List<TodoDTO> getTodoList() {
@@ -26,8 +25,7 @@ public class TestService {
 
         try {
 
-            @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
-            list = dao.selectAll(conn);
+            list = todoMapper.selectAll();
             log.info(list);
 
         } catch (Exception e) {
@@ -47,8 +45,7 @@ public class TestService {
 
         try {
 
-            @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
-            todoDTO = dao.selectByTno(conn, tno);
+            todoDTO = todoMapper.selectByTno(tno);
             log.info(todoDTO);
 
         } catch (Exception e) {
@@ -68,8 +65,7 @@ public class TestService {
 
         try {
 
-            @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
-            result = dao.registerToDo(conn, todoDTO);
+            result = todoMapper.registerToDo(todoDTO);
 
         } catch (Exception e) {
 
@@ -86,8 +82,7 @@ public class TestService {
 
         try {
 
-            @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
-            result = dao.updateTodo(conn, todoDTO);
+            result = todoMapper.updateTodo(todoDTO);
 
         } catch (Exception e) {
 
@@ -104,8 +99,7 @@ public class TestService {
 
         try {
 
-            @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
-            result = dao.deleteTodo(conn, tno);
+            result = todoMapper.deleteTodo(tno);
 
         } catch (Exception e) {
 
