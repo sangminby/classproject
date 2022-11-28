@@ -1,8 +1,6 @@
 package com.firstcoding.todo.domain;
 
 import lombok.*;
-import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 @AllArgsConstructor
 @NoArgsConstructor

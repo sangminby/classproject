@@ -1,9 +1,7 @@
 package com.firstcoding.todo.controller;
 
-import com.firstcoding.todo.domain.LoginInfoDTO;
 import com.firstcoding.todo.domain.MemberDTO;
 import com.firstcoding.todo.service.TestLoginService;
-import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

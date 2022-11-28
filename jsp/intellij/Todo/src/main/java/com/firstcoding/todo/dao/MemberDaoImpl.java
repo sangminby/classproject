@@ -4,7 +4,6 @@ import com.firstcoding.todo.domain.MemberDTO;
 import lombok.Cleanup;
 import org.springframework.stereotype.Repository;
 
-import java.lang.reflect.Member;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

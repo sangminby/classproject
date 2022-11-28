@@ -3,7 +3,6 @@ package com.firstcoding.todo.mapper;
 import com.firstcoding.todo.domain.TodoDTO;
 import org.apache.ibatis.annotations.*;
 
-import java.sql.SQLException;
 import java.util.List;
 
 @Mapper

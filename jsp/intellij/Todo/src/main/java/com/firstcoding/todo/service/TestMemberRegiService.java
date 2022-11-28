@@ -1,20 +1,15 @@
 package com.firstcoding.todo.service;
 
-import com.firstcoding.todo.domain.TodoDTO;
 import com.firstcoding.todo.mapper.MemberMapper;
 import com.firstcoding.todo.domain.MemberDTO;
 import com.firstcoding.todo.domain.MemberRegiRequestDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.validation.BindingResult;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
-import java.sql.SQLException;
 
 @Service
 public class TestMemberRegiService {
