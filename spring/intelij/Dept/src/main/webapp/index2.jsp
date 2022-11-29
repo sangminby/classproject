@@ -89,7 +89,7 @@
         .then(list => console.log(list))
         .catch(err => console.log(err))
 
-    
+
     request.post('/api/v1/depts', {deptno : 22, dname : 'test', loc : 'test123'})
         .then(response => {
             if(!response.ok) {
