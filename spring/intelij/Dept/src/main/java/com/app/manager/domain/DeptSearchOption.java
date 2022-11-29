@@ -1,7 +1,6 @@
 package com.app.manager.domain;
 
 import lombok.*;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @AllArgsConstructor
 @NoArgsConstructor
