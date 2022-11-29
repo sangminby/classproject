@@ -1,5 +1,6 @@
 package com.firstcoding.todo.controller;
 
+import com.firstcoding.todo.domain.SearchOption;
 import com.firstcoding.todo.service.TestService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,9 +18,9 @@ public class TestListController {
 
 
     @RequestMapping("/testtodo/list")
-    public String getList(Model model) {
+    public String getList(SearchOption searchOption, Model model) {
 
-        model.addAttribute("testlist", testService.getTodoList());
+        model.addAttribute("testlist", testService.getSearchList(searchOption));
 
         return "testtodo/list";
     }

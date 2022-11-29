@@ -53,6 +53,29 @@
   </table>
 
   <a href="/testtodo/register">Todo 등록하기</a> <a href="/index">돌아가기</a>
+  <hr>
+
+  <div style="margin-top: 10px">
+
+    <form>
+
+      검색
+      <select name="searchType">
+
+        <option value="dueDate">날짜</option>
+        <option value="finished">완료여부</option>
+
+      </select>
+
+
+      <input type="date" name="keyword">
+      <input type="checkbox" name="keyword">
+
+      <input type="submit" name="검색">
+
+    </form>
+
+  </div>
 
 </body>
 </html>

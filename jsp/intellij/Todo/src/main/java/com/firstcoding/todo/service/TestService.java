@@ -1,5 +1,6 @@
 package com.firstcoding.todo.service;
 
+import com.firstcoding.todo.domain.SearchOption;
 import com.firstcoding.todo.mapper.TodoMapper;
 import com.firstcoding.todo.domain.TodoDTO;
 import lombok.extern.log4j.Log4j2;
@@ -54,6 +55,12 @@ public class TestService {
         }
 
         return todoDTO;
+    }
+
+
+    public List<TodoDTO> getSearchList(SearchOption searchOption) {
+
+        return todoMapper.searchByTnoDuedate(searchOption);
     }
 
 

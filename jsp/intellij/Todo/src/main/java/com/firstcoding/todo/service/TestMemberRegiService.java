@@ -4,14 +4,18 @@ import com.firstcoding.todo.mapper.MemberMapper;
 import com.firstcoding.todo.domain.MemberDTO;
 import com.firstcoding.todo.domain.MemberRegiRequestDTO;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
 
+
 @Service
+@Log4j2
 public class TestMemberRegiService {
 
     @Autowired(required = false)

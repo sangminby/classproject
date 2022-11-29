@@ -4,16 +4,33 @@
 
 <mapper namespace="com.firstcoding.todo.mapper.TodoMapper">
 
-    <select id="selectAll" resultType="com.firstcoding.todo.domain.TodoDTO">
+    <select id="selectByTno" resultType="com.firstcoding.todo.domain.TodoDTO">
 
-        select * from tbl_todo
+        select * from tbl_todo where tno=#{tno}
 
     </select>
 
 
-    <select id="selectByTno" resultType="com.firstcoding.todo.domain.TodoDTO">
+    <select id="searchByTnoDuedate" parameterType="com.firstcoding.todo.domain.SearchOption" resultType="com.firstcoding.todo.domain.TodoDTO">
 
-        select * from tbl_todo where tno=#{tno}
+        select * from tbl_todo
+
+        <where>
+
+            <if test="searchType != null and keyword != null">
+
+                <if test="searchType == 'dueDate'">
+                    dueDate like concat('%', #{keyword}, '%')
+                </if>
+
+                <if test="searchType == 'finished'">
+                    finished like concat('%', #{keyword}, '%')
+                </if>
+
+
+            </if>
+
+        </where>
 
     </select>
 

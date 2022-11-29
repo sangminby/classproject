@@ -1,6 +1,7 @@
 package com.firstcoding.todo.controller;
 
 import com.firstcoding.todo.domain.MemberDTO;
+import com.firstcoding.todo.mapper.MemberMapper;
 import com.firstcoding.todo.service.TestLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,10 @@ public class TestLoginController {
 
     @Autowired
     private TestLoginService testLoginService;
+
+
+    @Autowired(required = false)
+    private MemberMapper memberMapper;
 
     @GetMapping
     public String LoginForm() {
