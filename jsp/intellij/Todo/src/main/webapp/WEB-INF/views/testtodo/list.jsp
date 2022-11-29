@@ -59,18 +59,14 @@
 
     <form>
 
-      검색
-      <select name="searchType">
+      날짜검색
+        <select name="searchType">
 
-        <option value="dueDate">날짜</option>
-        <option value="finished">완료여부</option>
+          <option value="dueDate">날짜</option>
 
-      </select>
+        </select>
 
-
-      <input type="date" name="keyword">
-      <input type="checkbox" name="keyword">
-
+      <input type="date" name="keyword" value="dueDate">
       <input type="submit" name="검색">
 
     </form>
