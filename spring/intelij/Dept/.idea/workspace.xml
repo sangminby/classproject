@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="062666a9-63bf-4768-b8ea-b37d6318db77" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../jsp/intellij/Todo/src/main/webapp/WEB-INF/spring/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jsp/intellij/Todo/src/main/webapp/WEB-INF/spring/servlet-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/map.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/map2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jsp/intellij/Todo/src/main/java/com/firstcoding/todo/mapper/MemberMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jsp/intellij/Todo/src/main/java/com/firstcoding/todo/mapper/MemberMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Emp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Emp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TodoSpring/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TodoSpring/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +47,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -95,7 +99,30 @@
       <recent name="com.app.manager.mapper" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.ConnectionTest.getTimeTest">
+    <configuration name="ConnectionTest.getTimeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ConnectionTest.getTimeTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Dept" />
       <method v="2">
@@ -198,6 +225,11 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.ConnectionTest.getTimeTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -216,7 +248,22 @@
       <workItem from="1669625526056" duration="552000" />
       <workItem from="1669682126845" duration="2435000" />
       <workItem from="1669685287802" duration="18200000" />
-      <workItem from="1669768379551" duration="2098000" />
+      <workItem from="1669768379551" duration="14331000" />
+      <workItem from="1669854842051" duration="21000" />
+      <workItem from="1669855357162" duration="3000" />
+      <workItem from="1669858482066" duration="3267000" />
+      <workItem from="1669866281138" duration="640000" />
+      <workItem from="1669872395449" duration="3104000" />
+      <workItem from="1669946362240" duration="5000" />
+      <workItem from="1669946633094" duration="797000" />
+      <workItem from="1669949379700" duration="5000" />
+      <workItem from="1669949542385" duration="1916000" />
+      <workItem from="1669966787449" duration="39000" />
+      <workItem from="1670202967654" duration="652000" />
+      <workItem from="1670207186958" duration="1709000" />
+      <workItem from="1670210344299" duration="133000" />
+      <workItem from="1670212341199" duration="853000" />
+      <workItem from="1670222478211" duration="5000" />
     </task>
     <servers />
   </component>
