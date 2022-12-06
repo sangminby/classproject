@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd685d1b-74d4-4216-833b-950189f3e043" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/map.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/map2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jsp/intellij/Todo/src/main/java/com/firstcoding/todo/mapper/MemberMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jsp/intellij/Todo/src/main/java/com/firstcoding/todo/mapper/MemberMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Dept/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/src/main/webapp/index2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/index2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Emp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Emp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,6 +212,11 @@
       <workItem from="1669357853273" duration="237000" />
       <workItem from="1669595922282" duration="20377000" />
       <workItem from="1669683114782" duration="20000" />
+      <workItem from="1669772296718" duration="12000" />
+      <workItem from="1669966815518" duration="1401000" />
+      <workItem from="1670204535874" duration="24000" />
+      <workItem from="1670210447439" duration="1239000" />
+      <workItem from="1670222500753" duration="2000" />
     </task>
     <servers />
   </component>
