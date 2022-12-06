@@ -11,7 +11,6 @@ public interface MemberMapper {
 
     int registerMember(MemberDTO memberDTO) throws SQLException;
 
-
     MemberDTO selectByIDPW(String uid, String pw) throws SQLException;
 
 }
