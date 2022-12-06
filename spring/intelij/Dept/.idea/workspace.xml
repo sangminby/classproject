@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="062666a9-63bf-4768-b8ea-b37d6318db77" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/map.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/map2.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jsp/intellij/Todo/src/main/java/com/firstcoding/todo/mapper/MemberMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jsp/intellij/Todo/src/main/java/com/firstcoding/todo/mapper/MemberMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../boot/firstBootApp/src/main/java/com/first/app/controller/IndexController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../boot/firstBootApp/src/main/java/com/first/app/domain/DeptDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../boot/firstBootApp/src/main/java/com/first/app/mapper/DeptMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../boot/firstBootApp/src/main/resources/mybatis/mapper/DeptMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../boot/firstBootApp/src/test/java/com/first/app/ConnectionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../boot/firstBootApp/src/test/java/com/first/app/MapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../boot/firstBootApp/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../boot/firstBootApp/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../boot/firstBootApp/src/main/java/com/first/app/FirstBootAppApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../boot/firstBootApp/src/main/java/com/first/app/FirstBootAppApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../boot/firstBootApp/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../boot/firstBootApp/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index2.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Emp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Emp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TodoSpring/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TodoSpring/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,6 +267,7 @@
       <workItem from="1670210344299" duration="133000" />
       <workItem from="1670212341199" duration="853000" />
       <workItem from="1670222478211" duration="5000" />
+      <workItem from="1670297770517" duration="837000" />
     </task>
     <servers />
   </component>
