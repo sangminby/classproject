@@ -3,8 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <style>
+
+        .title {
+            color: red;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+    </style>
+
 </head>
 <body>
+
+    <h1>모듈화 : insert</h1>
+    <div th:insert="~{fragment/footer :: copy}"></div>
+    <div th:insert="fragment/footer :: copy"></div>
+
+    <div th:replace="fragment/footer :: copy"></div>
+    <hr>
+
+
+
+    <h1>반복문</h1>
+    <h3>부서 리스트</h3>
+    <table border="1">
+
+        <tr>
+            <th>부서번호</th>
+            <th>부서이름</th>
+            <th>부서위치</th>
+        </tr>
+
+        <th:block th:each="dept : ${deptList}">
+
+            <tr>
+                <th th:text="${dept.deptno}"></th>
+                <th>[[${dept.dname}]]</th>
+                <th th:text="${dept.loc}"></th>
+            </tr>
+
+        </th:block>
+
+    </table>
+
+
+    <table border="1">
+
+        <tr>
+            <th>index</th>
+            <th>count</th>
+            <th>부서번호</th>
+            <th>부서이름</th>
+            <th>부서위치</th>
+        </tr>
+
+        <tr th:each="dept, deptStat : ${deptList}" th:object="${dept}">
+            <td th:text="${deptStat.index}"></td>
+            <td th:text="${deptStat.count}"></td>
+            <th th:text="*{deptno}"></th>
+            <th th:text="*{dname}"></th>
+            <th th:text="*{loc}"></th>
+        </tr>
+
+    </table>
+
+
+    <table border="1">
+
+        <tr>
+            <th>index</th>
+            <th>count</th>
+            <th>부서번호</th>
+            <th>부서이름</th>
+            <th>부서위치</th>
+        </tr>
+
+        <tr th:each="dept, deptStat : ${deptList}">
+            <td th:text="${deptStat.index}"></td>
+            <td th:text="${deptStat.count}"></td>
+            <th th:text="${dept.deptno}"></th>
+            <th>[[${dept.dname}]]</th>
+            <th th:text="${dept.loc}"></th>
+        </tr>
+
+    </table>
+
+
+    <table border="1">
+
+        <tr>
+            <th>부서번호</th>
+            <th>부서이름</th>
+            <th>부서위치</th>
+        </tr>
+
+        <tr th:each="dept : ${deptList}">
+            <th th:text="${dept.deptno}"></th>
+            <th>[[${dept.dname}]]</th>
+            <th th:text="${dept.loc}"></th>
+        </tr>
+
+    </table>
+    <hr>
+
+
+
+    <h1>조건식</h1>
+    <div th:with="age=${30}">
+
+        <ul>
+            <li><span th:text="${age}"></span></li>
+            <li>
+                <span th:text="성년" th:if="${age > 19}"></span>
+                <span th:text="미성년" th:unless="${age > 19}"></span>
+            </li>
+            <li th:switch="${age}">
+                <span th:case="15">15 살</span>
+                <span th:case="20">20 살</span>
+                <span th:case="25">25 살</span>
+                <span th:case="*">기타</span>
+            </li>
+        </ul>
+
+        <!-- 분기 / 반복 -->
+        <th:block th:if="${age>19}">
+            <div>성인입니다.</div>
+            <div>음주가 가능합니다.</div>
+            <div>술집에는 출입이 불가합니다.</div>
+        </th:block>
+
+    </div>
+    <hr>
+
+
+
+    <h1>속성의 추가/변경</h1>
+    <ul>
+        <li> <span> 안녕하세요 </span> </li>
+        <li> <span th:class="${'title'}"> 안녕하세요1 </span> </li>
+        <li> <span class="sub" th:class="${'title'}"> 안녕하세요2 </span> </li>
+        <li> <span class="sub" th:attrappend="class=${' title'}"> 안녕하세요3 </span> </li>
+        <li> <span class="sub" th:attrprepend="class=${' title '}"> 안녕하세요4 </span> </li>
+        <li> <span class="sub" th:classappend="${'title'}"> 안녕하세요5 </span> </li>
+        <br>
+        <li> checked </li>
+        <li><input type="checkbox" name="aaa" th:checked="true"></li>
+        <li><input type="checkbox" name="aaa" th:checked="false"></li>
+        <li><input type="checkbox" name="aaa" th:checked="${10>1}"></li>
+        <li><input type="checkbox" name="aaa" th:checked="${10<1}"></li>
+    </ul>
+    <hr>
+
+
 
     <h1>연산자</h1>
     <ul>
@@ -23,6 +175,7 @@
     <hr>
 
 
+
     <h1>URI 경로 표현 : @{}</h1>
     <ul>
         <li><span th:text="@{/dept/list}"></span> </li>
@@ -35,6 +188,7 @@
     <hr>
 
 
+
     <h1>LocalDateTime 객체의 포맷팅</h1>
     <ul>
         <li>현재 시간출력 : <span th:text="${localDateTime}"></span> </li>
@@ -44,12 +198,14 @@
     <hr>
 
 
+
     <h1>param, session의 속성</h1>
     <ul>
         <li>요청 파라미터 type = <span th:text="${param.type}"></span> </li>
         <li>session 속성 값 loginData : <span th:text="${session.loginData}"></span> </li>
     </ul>
     <hr>
+
 
 
     <h1>지역 변수 선언과 활용</h1>
@@ -65,6 +221,7 @@
     <hr>
 
 
+
     <h1>Map 객체 접근</h1>
     <ul>
         <li>10번 부서 : [[${deptMap['10']}]]</li>
@@ -76,6 +233,7 @@
     <hr>
 
 
+
     <h1>List 객체 접근</h1>
     <ul>
         <li>첫번째 부서 : [[${deptList[0]}]]</li>
@@ -83,6 +241,7 @@
         <li>첫번째 부서의 이름 : <span th:text="${deptList[0].dname}"></span> </li>
     </ul>
     <hr>
+
 
 
     <h1>객체 출력하는 표현식</h1>
@@ -95,11 +254,37 @@
     <hr>
 
 
+
     <span th:text="${list}"></span>
     <hr>
 
 
+
     <h4> [[${list}]] </h4>
+
+
+
+    <script th:inline="javascript">
+
+        let deptno = [[${deptList[0].deptno}]] ;
+        let dname = [[${deptList[0].dname}]] ;
+        let loc = [[${deptList[0].loc}]] ;
+
+        // 객체 -> JSON 형식으로 변환되어 처리
+        let dept = '[[${dept}]]' ;
+        let deptList = '[[${deptList}]]' ;
+
+        let deptObj = JSON.parse(dept);
+        let deptListObj = JSON.parse(deptList);
+
+        console.log('deptno', deptno)
+        console.log('dname', dname)
+        console.log('loc', loc)
+
+        console.log('deptObj ', deptObj)
+        console.log('deptListObj', deptListObj)
+
+    </script>
 
 </body>
 </html>
