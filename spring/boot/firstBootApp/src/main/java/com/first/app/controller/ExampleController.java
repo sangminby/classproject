@@ -27,7 +27,6 @@ public class ExampleController {
     private DeptListService deptListService;
 
 
-
     @GetMapping("/ex1")
     public String ex1(Model model, HttpSession httpSession) {
 
@@ -54,8 +53,5 @@ public class ExampleController {
 
         return "/ex/ex1";   // ex/ex1.html
     }
-
-
-
 
 }
