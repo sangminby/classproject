@@ -30,24 +30,24 @@ public class BoardWriteService {
         File saveDir = null;
         String newFileName = null;
 
-        if(file != null && !file.isEmpty() && file.getSize()>0) {
+
+        if(file != null && !file.isEmpty() && file.getSize()>0){
 
             String absolutePath = new File("").getAbsolutePath();
-            log.info("Path >>>>>>>>>>>>>>>>> " + absolutePath);
+            log.info(absolutePath);
 
             String path = "photo";
             saveDir = new File(absolutePath, path);
 
             // 폴더가 존재하지 않으면 생성
-            if(!saveDir.exists()) {
-
-                saveDir.mkdirs();
-                log.info("photo dir 생성 >>>>>>");
+            if(!saveDir.exists()){
+                saveDir.mkdir();
+                log.info(">>>>>  photo dir 생성");
             }
 
             String uuid = UUID.randomUUID().toString();
-            // 새로운 파일의 이름을 생성
-            newFileName = uuid + file.getOriginalFilename();
+            // 새로운 파일으 이름을 생성
+            newFileName = uuid+file.getOriginalFilename();
             // 새로운 저장 파일의 경로
             File newFile = new File(saveDir, newFileName);
 
@@ -62,8 +62,7 @@ public class BoardWriteService {
 
         BoardDTO boardDTO = boardWriteRequest.toBoardDTO();
 
-        if(newFileName != null) {
-
+        if(newFileName != null){
             boardDTO.setPhoto(newFileName);
         }
 
@@ -72,15 +71,10 @@ public class BoardWriteService {
         try {
             // DB insert
             result = boardMapper.insert(boardDTO);
-
-        } catch (SQLException e) {
-
-            if(newFileName != null) {
-
+        } catch (SQLException e){
+            if(newFileName!=null){
                 File delFile = new File(saveDir, newFileName);
-
-                if(delFile.exists()) {
-
+                if(delFile.exists()){
                     // 파일 삭제
                     delFile.delete();
                 }

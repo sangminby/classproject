@@ -1,5 +1,6 @@
 package com.app.board.controller.board;
 
+import lombok.Cleanup;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -29,7 +30,7 @@ public class ImageViewController {
         if(savedFile.exists()) {
 
             // 응답처리
-            InputStream imageStream = new FileInputStream(savedFile);
+            @Cleanup InputStream imageStream = new FileInputStream(savedFile);
             imageByteArray = imageStream.readAllBytes();
             status = HttpStatus.OK;
         }
