@@ -51,10 +51,10 @@ public class BoardListPage {
     private void calPageInfo() {
 
         // 끝번호
-        this.endNum = (int) (Math.ceil((this.pageNum * 1.0) / 5)) * 5;   // 11 -> 11.0 / 10 -> 1.1 -> 2.0 -> 2 * 10
+        this.endNum = (int) (Math.ceil((this.pageNum * 1.0) / 10)) * 10;   // 11 -> 11.0 / 10 -> 1.1 -> 2.0 -> 2 * 10
 
         // 시작번호
-        this.startNum = this.endNum-4;
+        this.startNum = this.endNum-9;
 
         // 전체 페이지의 끝번호
         int realEndNum = (int) (Math.ceil((this.totalCount * 1.0) / countPerPage)) ;
