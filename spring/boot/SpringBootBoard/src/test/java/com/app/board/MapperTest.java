@@ -24,8 +24,8 @@ public class MapperTest {
 //        log.info("board List >>>>>>>>>>> " + list1);
 
         // 1페이지 : 10개의 게시물
-        List<BoardDTO> list2 = boardMapper.selectList(30, 10);
-        log.info(list2);
+//        List<BoardDTO> list2 = boardMapper.selectList(30, 10);
+//        log.info(list2);
 
     }
 
