@@ -11,7 +11,9 @@ public interface DeptRepository extends JpaRepository<Dept, Integer> {
 
     Dept findByDeptno(Integer deptno);
 
+
     List<Dept> findByDnameLikeOrderByLocAsc(String dname);
+
 
     List<Dept> findByDeptnoGreaterThanAndDnameLikeOrLocLikeOrderByDeptnoDesc(Integer deptno, String dname, String loc);
 
