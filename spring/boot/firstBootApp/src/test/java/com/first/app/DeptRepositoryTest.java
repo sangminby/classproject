@@ -92,6 +92,43 @@ public class DeptRepositoryTest {
         long cnt = deptRepository.count();
         log.info("전체 부서의 수 >>>>>>>> " + cnt);
 
+    }
+
+
+    @Test
+    public void jpalMethodTest() {
+
+        Dept dept1 = deptRepository.findByDeptno(30);
+        log.info(">>>>>>>>>>>>" + dept1);
+
+        log.info(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+
+
+        List<Dept> list1 = deptRepository.findByDnameLikeOrderByLocAsc("%A%");
+        for(Dept dept : list1) {
+
+            log.info(dept);
+        }
+
+        log.info(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+
+
+        List<Dept> list2 = deptRepository.findByLocLike("%A%");
+        for(Dept dept : list2) {
+
+            log.info(dept);
+        }
+
+        log.info(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+
+
+        List<Dept> list3 = deptRepository.findByDeptnoBetween(10, 50);
+        for(Dept dept : list3) {
+
+            log.info(dept);
+        }
+
+        log.info(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
 
     }
 
