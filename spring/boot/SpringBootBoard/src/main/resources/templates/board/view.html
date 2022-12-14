@@ -167,14 +167,199 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+
     <script th:inline="javascript">
 
         var bno = [[${boardView.bno}]]
 
     </script>
 
-
     <script>
+
+        let editModal;
+
+        $(document).ready(function() {
+
+            editModal = new bootstrap.Modal('#replyEditModal')
+
+            $("#btn_reply").on('click', insertReply)
+            $("#btn_edit").click(editReply)
+
+
+            $("#replyList").on('click', '.edit',showEditModal)
+            $("#replyList").on('click', '.del',deleteReply)
+
+            setList()
+
+        })
+
+        function setList() {
+
+            $.getJSON('/reply/' + bno, function(data) {
+
+                $.each(data, function(index, reply) {
+
+                    let html = `<td class="col-2">${reply.replyer}</td>
+                                <td class="col">${reply.reply}</td>
+                                <td class="col-2">${reply.replyDate}</td>
+
+                                <td class="col-2">
+                                    <a href="javascript:" class="badge bg-warning text-decoration-none edit">수정</a>
+                                    <a href="javascript:" class="badge bg-danger text-decoration-none del">삭제</a>
+                                </td>`
+
+                    const newTR = $('<tr></tr>').attr('class', 'fs-6 text-center').attr('tr-index', reply.rno).html(html)
+
+                    $('#replyList').append(newTR)
+                })
+
+            })
+
+        }
+
+
+        function insertReply() {
+
+            // 서버로 전송할 payload
+            const payload = {
+
+                bno : bno,
+                reply : $("#reply").val(),
+                replyer : $("#replyer").val()
+            }
+
+            $.ajax({
+
+                url: '/reply',
+                type: 'post',
+                contentType: 'application/json',
+                data: JSON.stringify(payload),
+                dataType: 'json',
+
+                success: function(data) {
+
+                    const reply = data
+
+                    let html = '<td class="col-2">'+reply.replyer+'</td>'
+                    html += '<td class="col">'+reply.reply+'</td>'
+                    html += '<td class="col-2">'+reply.replyDate+'</td>'
+                    html += '<td class="col-2">' +
+                        '<a href="javascript:showEditModal('+reply.rno+')" class="badge bg-warning text-decoration-none">수정</a>' +
+                        '<a href="javascript:deleteReply('+reply.rno+')" class="badge bg-danger text-decoration-none">삭제</a>' +
+                        '</td>'
+
+
+                    const  newTR = $('<tr></tr>').attr('class', 'fs-6 text-center').attr('tr-index', reply.rno).html(html)
+
+                    $('#replyList').append(newTR)
+
+                    $("#reply").val()
+                    $("#replyer").val()
+
+                },
+                error : function(request, httpStatus, error) {
+
+                }
+
+            })
+
+        }
+
+
+        function deleteReply(e) {
+
+            e.preventDefault()
+
+            if(!confirm('삭제하시겠습니까?')) {
+                return;
+            }
+
+            const rno = $(this).parent('td').parent('tr').attr('tr-index')
+
+            $.ajax({
+                url: '/reply/' + rno,
+                type: 'delete',
+
+                success: function(data) {
+
+                    if(data==1) {
+
+                        $('tr[tr-index="'+rno+'"]').remove()
+                        alert('삭제되었습니다.')
+
+                    } else {
+
+                        alert('삭제할 대상이 존재하지 않습니다.')
+                    }
+                },
+                error: function(request, status, error) {
+
+                }
+
+            })
+
+        }
+
+
+        function showEditModal(e) {
+
+            e.preventDefault()
+
+            editModal.show()
+
+            const editTD = $(this).parent('td').parent('tr').children('td')
+            const rno = $(this).parent('td').parent('tr').attr('tr-index')
+
+            $('#erno').val(rno)
+            $('#ereplyer').val($(editTD).eq(0).text())
+            $('#ereply').val($(editTD).eq(1).text())
+            $('#ereplyDate').val($(editTD).eq(2).text())
+
+        }
+
+
+        function editReply() {
+
+            // 서버로 전송할 payload
+            // put => 전체 데이터의 변경. 모든 데이터를 서버로 전송, 값이 없는 경우 기본값으로 저장
+            const payload = {
+
+                bno : bno,
+                rno : $('#erno').val(),
+                reply : $("#ereply").val(),
+                replyer : $("#ereplyer").val(),
+                replyDate : $('#ereplyDate').val()
+            }
+
+            $.ajax({
+
+                url: '/reply/' + payload.rno,
+                type: 'put',
+                contentType: 'application/json',
+                data: JSON.stringify(payload),
+                dataType: 'json',
+
+                success: function(data) {
+
+                    const editTD = $('tr[tr-index="'+payload.rno+'"]>td')
+                    $(editTD).eq(1).text(payload.reply)
+
+                    editModal.hide()
+                },
+
+                error: function(request, status, error) {
+
+                }
+
+            })
+
+        }
+
+    </script>
+
+    <!--<script>
 
         let replyList;
         let editModal;
@@ -375,7 +560,7 @@
 
         }
 
-    </script>
+    </script>-->
 
 </body>
 </html>
