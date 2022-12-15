@@ -18,7 +18,7 @@ public class BoardListController {
         public void getList(@RequestParam(value = "p", defaultValue = "1") int pageNum,
                             Model model
         ){
-                model.addAttribute("boardList", boardListService.getList(pageNum));
+                model.addAttribute("boardList", boardListService.getList());
                 model.addAttribute("listPage", boardListService.getPage(pageNum));
         }
 

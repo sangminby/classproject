@@ -14,6 +14,7 @@ public class ReplyListService {
     @Autowired
     private ReplyMapper replyMapper;
 
+
     public List<ReplyDTO> selectAll(int bno) {
 
         return replyMapper.selectAll(bno);

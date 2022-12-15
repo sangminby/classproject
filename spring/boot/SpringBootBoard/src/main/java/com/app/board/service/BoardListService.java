@@ -3,6 +3,8 @@ package com.app.board.service;
 import com.app.board.domain.BoardArticleDTO;
 import com.app.board.domain.BoardDTO;
 import com.app.board.domain.BoardListPage;
+import com.app.board.entity.Board;
+import com.app.board.entity.BoardRepository;
 import com.app.board.mapper.BoardMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,9 @@ public class BoardListService {
 
     @Autowired
     private BoardMapper boardMapper;
+
+    @Autowired
+    private BoardRepository boardRepository;
 
 
     public BoardListPage getPage(int pageNum) {
@@ -31,12 +36,19 @@ public class BoardListService {
     }
 
 
-    public List<BoardArticleDTO> getList(int pageNum) {
+//    public List<BoardArticleDTO> getList(int pageNum) {
+//
+//        int index = (pageNum-1)*10; // 1->0, 2->10, 3->20, 4->30
+//        int count = 10;
+//
+//        return boardMapper.selectList(index, count);
+//    }
 
-        int index = (pageNum-1)*10; // 1->0, 2->10, 3->20, 4->30
-        int count = 10;
+    public List<Board> getList(){
 
-        return boardMapper.selectList(index, count);
+        return boardRepository.findAll();
     }
+
+
 
 }
