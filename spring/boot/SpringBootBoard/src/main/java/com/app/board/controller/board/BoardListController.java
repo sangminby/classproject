@@ -13,6 +13,7 @@ public class BoardListController {
         @Autowired
         private BoardListService boardListService;
 
+
         @GetMapping("/board/list")      // /board/list?p=1
         public void getList(@RequestParam(value = "p", defaultValue = "1") int pageNum,
                             Model model
