@@ -65,27 +65,27 @@ public class DeptRepositoryTest {
 
 
         // insert
-//        Dept insertData = Dept.builder().dname("기획팀").loc("서울").build();
-//        log.info("insert 전 데이터 >>>>> " + insertData);
-//
-//        Dept resultData = deptRepository.save(insertData);
-//        log.info("insert 후 데이터 >>>>> " + resultData);
+        Dept insertData = Dept.builder().dname("기획팀").loc("서울").build();
+        log.info("insert 전 데이터 >>>>> " + insertData);
+
+        Dept resultData = deptRepository.save(insertData);
+        log.info("insert 후 데이터 >>>>> " + resultData);
 
         log.info(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
 
 
         // update -> save(S) 이용
-//        Dept editData = Dept.builder().deptno(2001).dname("QA").loc("분당").build();
-//
-//        Dept editResult = deptRepository.save(editData);
-//
-//        log.info("update 후 데이터 >>>>> " + editResult);
+        Dept editData = Dept.builder().deptno(2001).dname("QA").loc("분당").build();
+
+        Dept editResult = deptRepository.save(editData);
+
+        log.info("update 후 데이터 >>>>> " + editResult);
 
         log.info(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
 
 
         // delete
-//        deptRepository.deleteById(2002);
+        deptRepository.deleteById(2002);
 
 
         // 개수
