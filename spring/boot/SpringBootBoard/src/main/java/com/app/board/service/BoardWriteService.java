@@ -2,7 +2,9 @@ package com.app.board.service;
 
 import com.app.board.domain.BoardDTO;
 import com.app.board.domain.BoardWriteRequest;
+import com.app.board.entity.Board;
 import com.app.board.mapper.BoardMapper;
+import com.app.board.repository.BoardRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,9 @@ public class BoardWriteService {
 
     @Autowired
     private BoardMapper boardMapper;
+
+    @Autowired
+    private BoardRepository boardRepository;
 
 
     @GetMapping
@@ -60,20 +65,25 @@ public class BoardWriteService {
 
         }
 
-        BoardDTO boardDTO = boardWriteRequest.toBoardDTO();
+        // Request - > Entity
+        Board board = boardWriteRequest.toBoardEntity();
 
         if(newFileName != null){
-            boardDTO.setPhoto(newFileName);
+            board.setPhoto(newFileName);
         }
 
         int result = 0;
 
         try {
             // DB insert
-            result = boardMapper.insert(boardDTO);
-        } catch (SQLException e){
+            result = boardRepository.save(board) != null ? 1 : 0;
+
+        } catch (Exception e){
+
             if(newFileName!=null){
+
                 File delFile = new File(saveDir, newFileName);
+
                 if(delFile.exists()){
                     // 파일 삭제
                     delFile.delete();

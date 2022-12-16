@@ -1,7 +1,10 @@
 package com.app.board.domain;
 
+import com.app.board.entity.Board;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,10 +22,21 @@ public class BoardEditRequest {
     private String oldFile;
     private MultipartFile formFile;
 
-
     public BoardDTO toboardDTO() {
 
         return BoardDTO.builder()
+                .bno(bno)
+                .title(title)
+                .writer(writer)
+                .content(content)
+                .photo(oldFile)
+                .build();
+    }
+
+
+    public Board toBoardEntity() {
+
+        return Board.builder()
                 .bno(bno)
                 .title(title)
                 .writer(writer)

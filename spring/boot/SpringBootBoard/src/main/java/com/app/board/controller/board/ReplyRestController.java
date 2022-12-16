@@ -1,6 +1,7 @@
 package com.app.board.controller.board;
 
 import com.app.board.domain.ReplyDTO;
+import com.app.board.entity.Reply;
 import com.app.board.service.*;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,9 +35,9 @@ public class ReplyRestController {
 
     // get /reply/{bno} -> list
     @GetMapping(value = "/{bno}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<ReplyDTO>> selectList(@PathVariable("bno") int bno) {
+    public ResponseEntity<List<Reply>> selectList(@PathVariable("bno") int bno) {
 
-        List<ReplyDTO> list = replyListService.selectAll(bno);
+        List<Reply> list = replyListService.selectAll(bno);
 
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
@@ -44,18 +45,22 @@ public class ReplyRestController {
 
     // post /reply -> reply     JSON 데이터를 받아서 DB insert
     @PostMapping
-    public ResponseEntity<ReplyDTO> insertReply(@RequestBody ReplyDTO replyDTO) {
+    public ResponseEntity<Reply> insertReply(@RequestBody ReplyDTO replyDTO) {
 
         log.info("insert 전 >>>>> " + replyDTO);
 
         // Service -> Mapper
-        replyInsertService.insertReply(replyDTO);
+        Reply resultReply = replyInsertService.insertReply(replyDTO);
 
-        log.info("insert 후 >>>>> " + replyDTO);     // rno 값이 갱신된 데이터
+        // 입력된 row의 rno값을 구할 수 있다
+        Reply reply = replyReadService.selectByRno(resultReply.getRno());
+
+        log.info("insert 후 >>>>> " + reply);     // rno 값이 갱신된 데이터
 
         //replyDTO.setReplyDate(LocalDate.now().toString());
 
-        return new ResponseEntity<>(replyReadService.selectByRno(replyDTO.getRno()), HttpStatus.OK);
+//        return new ResponseEntity<>(replyReadService.selectByRno(replyDTO.getRno()), HttpStatus.OK);
+        return new ResponseEntity<>(resultReply, HttpStatus.OK);
     }
 
 

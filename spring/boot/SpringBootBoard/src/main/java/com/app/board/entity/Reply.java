@@ -6,36 +6,33 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "tbl_board")
+@Table(name = "tbl_reply")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
 @Builder
-public class Board {
+public class Reply {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
+    private Integer rno;
+
+    @Column
     private Integer bno;
 
     @Column
-    private String title;
+    private String reply;
 
     @Column
-    private String content;
-
-    @Column(updatable = false)
-    private String writer;
-
-    @Column
-    private String photo;
-
-    @Column(insertable = false, updatable = false)
-    private LocalDate regdate;
+    private String replyer;
 
     @Column(insertable = false)
-    private LocalDate updatedate;
+    private LocalDate replyDate;
+
+    @Column(insertable = false)
+    private LocalDate updateDate;
 
 }

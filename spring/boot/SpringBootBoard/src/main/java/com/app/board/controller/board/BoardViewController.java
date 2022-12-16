@@ -1,5 +1,6 @@
 package com.app.board.controller.board;
 
+import com.app.board.repository.BoardRepository;
 import com.app.board.service.BoardViewService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
