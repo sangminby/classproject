@@ -7,17 +7,16 @@ import java.util.Collection;
 
 public class AuthMemberDTO extends User {
 
-    private String email;
     private String name;
 
     public AuthMemberDTO(
                         String username,
                         String password,
-                        Collection<? extends GrantedAuthority> authorities
+                        Collection<? extends GrantedAuthority> authorities,
+                        String name
     ) {
 
         super(username, password, authorities);
-        this.email = email;
         this.name = name;
 
     }

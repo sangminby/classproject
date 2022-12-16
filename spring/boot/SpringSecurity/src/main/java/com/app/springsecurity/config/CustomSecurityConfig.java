@@ -1,19 +1,27 @@
 package com.app.springsecurity.config;
 
+import com.app.springsecurity.security.Custom403Handler;
+import com.app.springsecurity.security.CustomLoginSuccessHandler;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @Configuration
 @Log4j2
 public class CustomSecurityConfig {
+
+    @Bean
+    public AuthenticationSuccessHandler successHandler() {
+
+        return new CustomLoginSuccessHandler();
+    }
+
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -27,15 +35,23 @@ public class CustomSecurityConfig {
                 .antMatchers("/sample/admin").hasRole("ADMIN");
 
         // 2. form 기반 인증처리 : 커스텀 로그인 페이지 설정 -> 성공시 처리하는 핸들러 객체 등록
-        http.formLogin();
+        http.formLogin().successHandler(successHandler());
 
         // 3. 허가 실패 403 : 권한 부족의 처리 핸들러 등록
+        http.exceptionHandling().accessDeniedHandler(accessDeniedHandler());
+
         // 4. 로그아웃
         http.logout();
 
         // 5. 자동 로그인
 
         return http.build();
+    }
+
+    @Bean
+    public AccessDeniedHandler accessDeniedHandler() {
+
+        return new Custom403Handler();
     }
 
 
@@ -48,7 +64,7 @@ public class CustomSecurityConfig {
 
 
     // 테스트 환경
-    @Bean
+    /*@Bean
     public InMemoryUserDetailsManager userDetailsManager() {
 
         UserDetails userDetails = User.builder()
@@ -61,6 +77,6 @@ public class CustomSecurityConfig {
         log.info(">>>>>>>>>>>>> " + userDetails);
 
         return new InMemoryUserDetailsManager(userDetails);
-    }
+    }*/
 
 }

@@ -24,7 +24,7 @@ public class Member {
     private String name;
 
 
-    @ElementCollection(fetch = FetchType.LAZY)
+    @ElementCollection(fetch = FetchType.EAGER)
     private Set<MemberRole> roleSet;
 
 
