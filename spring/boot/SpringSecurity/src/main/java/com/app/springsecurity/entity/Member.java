@@ -23,13 +23,11 @@ public class Member {
     @Column
     private String name;
 
-
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<MemberRole> roleSet;
 
-
-    public void addMemberRole(MemberRole role) {
-
+    public void addMemberRole(MemberRole role){
         roleSet.add(role);
     }
+
 }

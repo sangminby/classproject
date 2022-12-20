@@ -22,38 +22,31 @@ public class CustomUserDetailService implements UserDetailsService {
     @Autowired
     private MemberRepository memberRepository;
 
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        log.info("loadUserByUsername -> " + username);
+        log.info(" >>>>>>>>>>   loadUserByUsername => " + username);
 
         Optional<Member> result = memberRepository.findById(username);
 
-        if(result.isEmpty()) {
-
+        if(result.isEmpty()){
             throw new UsernameNotFoundException("Check User Email");
         }
 
         Member member = result.get();
-        log.info(">>>>>>>>>>>>> member ->" + member);
+        log.info(">>>>>>>>>>>>>>>  member => " + member);
 
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 
-        for(MemberRole memberRole : member.getRoleSet()) {
-
-            // ROLE_ADMIN, ROLE_USER
-            authorities.add(new SimpleGrantedAuthority("ROLE_" + memberRole.name()));
+        for(MemberRole memberRole : member.getRoleSet()){
+            // ROLE_ADMIN ROLE_USER
+            authorities.add(new SimpleGrantedAuthority("ROLE_"+memberRole.name()));
         }
 
         AuthMemberDTO authMemberDTO = new AuthMemberDTO(
-                                                        member.getEmail(),
-                                                        member.getPassword(),
-                                                        authorities,
-                                                        member.getName()
+                member.getEmail(), member.getPassword(),authorities, member.getName()
         );
 
         return authMemberDTO;
     }
-
 }

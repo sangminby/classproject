@@ -9,14 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class Custom403Handler implements AccessDeniedHandler {
-
     @Override
     public void handle(HttpServletRequest request,
                        HttpServletResponse response,
-                       AccessDeniedException accessDeniedException
-    ) throws IOException, ServletException {
+                       AccessDeniedException accessDeniedException) throws IOException, ServletException {
 
-        response.sendRedirect("/login");
+        response.sendRedirect("/sample/login");
+
     }
-
 }

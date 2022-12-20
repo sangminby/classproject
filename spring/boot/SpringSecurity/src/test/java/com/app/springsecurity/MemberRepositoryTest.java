@@ -19,16 +19,15 @@ public class MemberRepositoryTest {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-
     @Test
-    public void insertMember() {
+    public void insertMember(){
 
         Member member = Member.builder()
-                                .email("admin@gmail")
-                                .name("관리자-1")
-                                .roleSet(new HashSet<MemberRole>())
-                                .password(passwordEncoder.encode("1111"))
-                                .build();
+                .email("admin@gmail")
+                .name("관리자-1")
+                .roleSet(new HashSet<MemberRole>())
+                .password(passwordEncoder.encode("1111"))
+                .build();
 
         // 기본 권한 부여
         member.addMemberRole(MemberRole.ADMIN);
