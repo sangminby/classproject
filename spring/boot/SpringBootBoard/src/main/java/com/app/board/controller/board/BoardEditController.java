@@ -1,8 +1,8 @@
 package com.app.board.controller.board;
 
 import com.app.board.domain.BoardEditRequest;
-import com.app.board.service.BoardEditService;
-import com.app.board.service.BoardViewService;
+import com.app.board.service.board.BoardEditService;
+import com.app.board.service.board.BoardViewService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import java.sql.SQLException;
 
 @Controller
 @RequestMapping("/board/edit")
@@ -26,27 +24,31 @@ public class BoardEditController {
     @Autowired
     private BoardEditService boardEditService;
 
-
     @GetMapping
-    public void editForm(@RequestParam("bno") int bno, @RequestParam("p") int p, Model model) {
-
-        model.addAttribute("board", boardViewService.selectBoard(bno));
-        model.addAttribute("currPageNum", p);
-
+    public void edtiForm(
+            @RequestParam("bno") int bno,
+            @RequestParam("p") int p,
+            Model model
+    ){
+        model.addAttribute("board", boardViewService.selectBoardDTO(bno));
+        model.addAttribute("curPageNum", p);
     }
 
 
     @PostMapping
-    public String edit(BoardEditRequest boardEditRequest, RedirectAttributes redirectAttributes) throws SQLException {
+    public String edit(
+            BoardEditRequest boardEditRequest,
+            RedirectAttributes redirectAttributes
 
+    ){
         log.info(boardEditRequest);
 
         redirectAttributes.addAttribute("bno", boardEditRequest.getBno());
-        redirectAttributes.addAttribute("p", boardEditRequest.getCurrPageNum());
+        redirectAttributes.addAttribute("p", boardEditRequest.getCurPageNum());
 
         boardEditService.edit(boardEditRequest);
 
         return "redirect:/board/view";
-    }
 
+    }
 }

@@ -16,17 +16,18 @@ public class MapperTest {
     @Autowired
     private BoardMapper boardMapper;
 
-
     @Test
-    public void mapperTest() {
+    public void mapperTest(){
 
-//        List<BoardDTO> list1 = boardMapper.selectAll();
-//        log.info("board List >>>>>>>>>>> " + list1);
+        //List<BoardDTO> list1 = boardMapper.selectAll();
+        //log.info("board List ::::::::::::::: " + list1);
 
         // 1페이지 : 10개의 게시물
-//        List<BoardDTO> list2 = boardMapper.selectList(30, 10);
-//        log.info(list2);
+//        List<BoardDTO> list1 = boardMapper.selectList(30, 10);
+//        log.info(list1);
 
     }
+
+
 
 }

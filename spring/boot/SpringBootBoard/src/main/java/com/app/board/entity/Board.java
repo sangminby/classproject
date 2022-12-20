@@ -1,5 +1,6 @@
 package com.app.board.entity;
 
+
 import lombok.*;
 
 import javax.persistence.*;
@@ -11,8 +12,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 @Builder
+@ToString
 public class Board {
 
     @Id
@@ -26,8 +27,12 @@ public class Board {
     @Column
     private String content;
 
-    @Column(updatable = false)
-    private String writer;
+    /*@Column(updatable = false)
+    private String writer;*/
+
+    @ManyToOne
+    @JoinColumn(name = "writer")
+    private BoardMember writer;
 
     @Column
     private String photo;
@@ -37,5 +42,7 @@ public class Board {
 
     @Column(insertable = false)
     private LocalDate updatedate;
+
+
 
 }

@@ -18,24 +18,26 @@ public class ImageViewController {
 
     @GetMapping(value = "/upload/photo/{fileName}", produces = MediaType.IMAGE_PNG_VALUE)
     @ResponseBody
-    public ResponseEntity<byte[]> viewImage(@PathVariable("fileName") String fileName) throws IOException {
+    public ResponseEntity<byte[]> viewImage(
+            @PathVariable("fileName") String fileName
+    ) throws IOException {
 
-        log.info("imageView Controller ...");
+        log.info(" ImageView Controller ...");
 
         byte[] imageByteArray = null;
         HttpStatus status = HttpStatus.NOT_FOUND;
 
-        File savedFile = new File(new File("").getAbsolutePath(), "photo\\" + fileName);
 
-        if(savedFile.exists()) {
+        File savedFile = new File(new File("").getAbsolutePath(), "photo\\"+fileName);
 
-            // 응답처리
-            @Cleanup InputStream imageStream = new FileInputStream(savedFile);
+        if(savedFile.exists()){
+            // 응답 처리
+            InputStream imageStream = new FileInputStream(savedFile);
             imageByteArray = imageStream.readAllBytes();
+            imageStream.close();
             status = HttpStatus.OK;
         }
 
         return new ResponseEntity<byte[]>(imageByteArray, status);
     }
-
 }

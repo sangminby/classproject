@@ -8,8 +8,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 @Builder
+@ToString
 public class BoardArticleDTO {
 
     private int bno;
@@ -20,5 +20,4 @@ public class BoardArticleDTO {
     private String photo;
     private LocalDate regdate;
     private LocalDate updatedate;
-
 }

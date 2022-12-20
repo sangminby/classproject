@@ -17,13 +17,9 @@ public class ConnectionTest {
     @Autowired
     private DataSource dataSource;
 
-
     @Test
     public void connectionTest() throws SQLException {
-
         @Cleanup Connection conn = dataSource.getConnection();
-
         log.info(conn);
     }
-
 }

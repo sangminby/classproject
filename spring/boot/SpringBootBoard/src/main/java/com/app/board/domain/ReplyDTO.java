@@ -1,5 +1,7 @@
 package com.app.board.domain;
 
+
+import com.app.board.entity.BoardMember;
 import com.app.board.entity.Reply;
 import lombok.*;
 
@@ -9,26 +11,28 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 @Builder
+@ToString
 public class ReplyDTO {
 
     private int rno;
     private int bno;
     private String reply;
-    private String replyer;
-    private String replyDate;
-    private String updateDate;
 
-    public Reply toReplyEntity() {
+    private Integer replyer;   //String -> int 회원의 idx
 
+    private String replydate;
+    private String updatedate;
+
+    public Reply toReplyEntity(){
         return Reply.builder()
-                            .rno(rno)
-                            .bno(bno)
-                            .reply(reply)
-                            .replyer(replyer)
-//                            .replyDate(LocalDate.parse(replyDate))
-                            .build();
+                .rno(rno)
+                .bno(bno)
+                .reply(reply)
+                .replyer(BoardMember.builder().idx(replyer).build())
+                /*.replyer(replyer)*/
+                /*.replydate(LocalDate.parse(replydate) )*/
+                .build();
     }
 
 }
