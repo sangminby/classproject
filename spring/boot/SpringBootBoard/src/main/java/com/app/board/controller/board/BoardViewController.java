@@ -33,6 +33,4 @@ public class BoardViewController {
         model.addAttribute("midx", customUser.getBoardMember().getIdx());
     }
 
-
-
 }
