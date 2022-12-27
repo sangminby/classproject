@@ -7,7 +7,6 @@ import org.springframework.security.core.userdetails.User;
 
 import java.util.Collection;
 
-@Getter
 public class CustomUser extends User {
 
     private BoardMember boardMember; // 추가적인 회원의 정보
