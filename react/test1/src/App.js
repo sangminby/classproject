@@ -26,12 +26,14 @@ import SignUpDialog from './components/SignUpDialog';
 import Card from './components/Card';
 import ProfileCard from './components/ProfileCard';
 import DarkOrWhite from './components/DarkOrWhite';
+import Container from './components/ex1/Container';
+import WordContainer from './components/ex2/WordContainer';
 
 // let list = [{}, {}, {}, {}, {}, {}, {}]
 
 function App() {
   return (
-    <DarkOrWhite />
+    <WordContainer />
   );
 }
 
