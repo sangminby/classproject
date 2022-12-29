@@ -5,7 +5,7 @@ import MainWrap from "./MainWrap";
 
 const blogData = {
     header : {
-        title : '리액트로 만드는 블로그',
+        title : '블로그',
         description : 'React Component BlogMain '
     },
     nav : {
@@ -49,7 +49,7 @@ function BlogMain(props) {
                 ctgy={blogData.aside.ctgy}
                 recentPosts={blogData.aside.recentPost} />
             <footer>
-                Create by Jin
+                Create by Min
             </footer>
         </>
     );

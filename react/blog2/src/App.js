@@ -1,4 +1,5 @@
 import './App.css';
+import './default.css'
 import BlogMain from "./components/BlogMain";
 
 function App() {
