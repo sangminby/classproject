@@ -3,10 +3,9 @@ import {deleteTodo, getTodo} from "../../apis/todoAPI";
 import {useNavigate} from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import {Button, Checkbox, FormControlLabel, TextField} from "@mui/material";
-import {CheckBox} from "@mui/icons-material";
+import {Button, Checkbox, FormControlLabel, Stack, TextField} from "@mui/material";
 
-function TodoReadComponent({id, moveToList, setResult}) {
+function TodoReadComponent({id, moveToList, setResult, moveToModify}) {
 
     const navigate  = useNavigate()
     const [todo, setTodo] = useState({})
@@ -24,8 +23,6 @@ function TodoReadComponent({id, moveToList, setResult}) {
         const result = deleteTodo(id)
         setResult('삭제되었습니다.')
     }
-
-    // 수정 취소
 
     return (
         <>
@@ -50,9 +47,11 @@ function TodoReadComponent({id, moveToList, setResult}) {
             </Box>
 
             <Box sx={{p:1}} display={"flax"} justfyContent={"right"}>
-                <Button variant={"contained"}>수정</Button>
-                <Button variant={"contained"} onClick={clickDelete}>삭제</Button>
-                <Button variant={"contained"} onClick={moveToList}>LIST</Button>
+                <Stack spacing={2} direction="row">
+                    <Button variant={"contained"} onClick={() => moveToModify()}>수정</Button>
+                    <Button variant={"contained"} onClick={clickDelete}>삭제</Button>
+                    <Button variant={"contained"} onClick={moveToList}>LIST</Button>
+                </Stack>
             </Box>
         </>
     );

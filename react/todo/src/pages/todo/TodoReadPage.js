@@ -4,6 +4,7 @@ import PageLayout from "../../layout/PageLayout";
 import {useNavigate, useParams, useSearchParams} from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import TodoReadComponent from "../../components/todo/TodoReadComponent";
+import TodoModifyComponent from "../../components/todo/TodoModifyComponent";
 
 function TodoReadPage(props) {
 
@@ -25,6 +26,26 @@ function TodoReadPage(props) {
         })
     }
 
+    const moveToModify = () => {
+        const pageNum = page || 1
+        const sizeNum = size || 10
+
+        navigate({
+            pathname: `/todo/modify/${id}`,
+            search: `?page=${pageNum}&size=${sizeNum}`
+        })
+    }
+
+    const moveToBack = () => {
+        const pageNum = page || 1
+        const sizeNum = size || 10
+
+        navigate({
+            pathname: `/todo/read/${id}`,
+            search: `?page=${pageNum}&size=${sizeNum}`
+        })
+    }
+
     const setResult = (result) => {
         setMsg(result)
     }
@@ -38,9 +59,9 @@ function TodoReadPage(props) {
     const getComponent = () => {
 
         if(cmd === 'read') {
-            return <TodoReadComponent id={id} moveToList={moveToList} setResult={setResult}></TodoReadComponent>
+            return <TodoReadComponent id={id} moveToList={moveToList} setResult={setResult} moveToModify={moveToModify}></TodoReadComponent>
         } else if(cmd === 'modify') {
-            return null
+            return <TodoModifyComponent id={id} moveToList={moveToList} setResult={setResult} moveToBack={moveToBack}></TodoModifyComponent>
         }
 
         return <></>
