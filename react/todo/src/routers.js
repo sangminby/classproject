@@ -30,7 +30,7 @@ const routers = createBrowserRouter([
                 element : <Navigate to={"/todo/list"} replace={true}></Navigate>
             },
             {
-                path : "read/:id",
+                path : ":cmd/:id",
                 element : <TodoReadPage></TodoReadPage>
             }
         ]

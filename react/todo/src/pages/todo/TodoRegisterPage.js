@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 
 function TodoRegisterPage(props) {
 
-    const [msg, setMsg] = useState()
+    const [msg, setMsg] = useState(null)
     const navigate = useNavigate()
 
     const setResult = (result) => {

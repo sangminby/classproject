@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="146f108a-cff4-4041-8fe8-69c6df833c5b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/apis/todoAPI.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/todo/TodoRegisterComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/todo/TodoListComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/todo/TodoReadComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apis/todoAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/todoAPI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/todo/TodoListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/todo/TodoListPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/todo/TodoReadPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/todo/TodoReadPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/todo/TodoRegisterPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/todo/TodoRegisterPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1672622263727</updated>
-      <workItem from="1672622265056" duration="11444000" />
+      <workItem from="1672622265056" duration="17450000" />
     </task>
     <servers />
   </component>
