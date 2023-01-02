@@ -6,7 +6,7 @@ import {Grid, Paper} from "@mui/material";
 
 function MainPage(props) {
     return (
-        <PageLayout title={'Sample Page'}>
+        <PageLayout title={'Main Page'}>
             <Grid item xs={12} md={12} lg={12}>
                 <Paper sx={{p:2, display:'flex',flexDirection: 'column'}}>
                     <h1>Main Page</h1>

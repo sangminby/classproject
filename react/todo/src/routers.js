@@ -1,6 +1,9 @@
-import {createBrowserRouter} from "react-router-dom";
+import {createBrowserRouter, Navigate} from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import AboutPage from "./pages/AboutPage";
+import TodoListPage from "./pages/todo/TodoListPage";
+import TodoRegisterPage from "./pages/todo/TodoRegisterPage";
+import TodoReadPage from "./pages/todo/TodoReadPage";
 
 const routers = createBrowserRouter([
     {
@@ -10,5 +13,29 @@ const routers = createBrowserRouter([
     {
         path : "about", // /about
         element : <AboutPage></AboutPage>
+    },
+    {
+        path : "todo",
+        children : [
+            {
+                path : "list",  // /todo/list
+                element : <TodoListPage></TodoListPage>
+            },
+            {
+                path : "register",  // /todo/register
+                element : <TodoRegisterPage></TodoRegisterPage>
+            },
+            {   // /todo
+                path : "",
+                element : <Navigate to={"/todo/list"} replace={true}></Navigate>
+            },
+            {
+                path : "read/:id",
+                element : <TodoReadPage></TodoReadPage>
+            }
+        ]
     }
+
 ])
+
+export default routers
