@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd685d1b-74d4-4216-833b-950189f3e043" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../boot/SpringBootBoard/src/main/java/com/app/board/security/CustomUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../boot/SpringBootBoard/src/main/java/com/app/board/security/CustomUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../react/todo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../react/todo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -217,6 +216,9 @@
       <workItem from="1671522248074" duration="13000" />
       <workItem from="1671603426888" duration="1439000" />
       <workItem from="1671669066118" duration="1054000" />
+      <workItem from="1672725027199" duration="489000" />
+      <workItem from="1672735970319" duration="48000" />
+      <workItem from="1673248573448" duration="20000" />
     </task>
     <servers />
   </component>
